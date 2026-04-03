@@ -1,4 +1,12 @@
 /home/berthe-moussa/Documents/smart-economie/back/src/main/java/com/smart_economie/smart_economie/SmartEconomieApplication.java
-/home/berthe-moussa/Documents/smart-economie/back/src/main/java/com/smart_economie/smart_economie/TestController.java
 /home/berthe-moussa/Documents/smart-economie/back/src/main/java/com/smart_economie/smart_economie/configs/SwaggerConfig.java
 /home/berthe-moussa/Documents/smart-economie/back/src/main/java/com/smart_economie/smart_economie/configs/WebSecurityConfig.java
+/home/berthe-moussa/Documents/smart-economie/back/src/main/java/com/smart_economie/smart_economie/controllers/TestController.java
+/home/berthe-moussa/Documents/smart-economie/back/src/main/java/com/smart_economie/smart_economie/models/Client.java
+/home/berthe-moussa/Documents/smart-economie/back/src/main/java/com/smart_economie/smart_economie/models/ConstatAmiable.java
+/home/berthe-moussa/Documents/smart-economie/back/src/main/java/com/smart_economie/smart_economie/models/ContratAssurance.java
+/home/berthe-moussa/Documents/smart-economie/back/src/main/java/com/smart_economie/smart_economie/models/Garantie.java
+/home/berthe-moussa/Documents/smart-economie/back/src/main/java/com/smart_economie/smart_economie/models/Paiement.java
+/home/berthe-moussa/Documents/smart-economie/back/src/main/java/com/smart_economie/smart_economie/models/Sinistre.java
+/home/berthe-moussa/Documents/smart-economie/back/src/main/java/com/smart_economie/smart_economie/models/Temoignage.java
+/home/berthe-moussa/Documents/smart-economie/back/src/main/java/com/smart_economie/smart_economie/models/Vehicule.java
