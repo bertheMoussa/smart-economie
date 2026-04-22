@@ -1,8 +1,8 @@
 import React, { createContext, useState, useCallback, ReactNode } from 'react';
 
-export type UserType = 'particulier' | 'entreprise';
+type UserType = 'particulier' | 'entreprise';
 
-export interface User {
+interface User {
   id: string;
   email: string;
   firstName: string;
@@ -13,7 +13,7 @@ export interface User {
   avatar?: string;
 }
 
-export interface AuthContextType {
+interface AuthContextType {
   user: User | null;
   isLoading: boolean;
   isAuthenticated: boolean;
@@ -22,6 +22,10 @@ export interface AuthContextType {
   logout: () => void;
   updateProfile: (userData: Partial<User>) => Promise<void>;
 }
+
+// Exports pour les imports externes
+export type { User, UserType, AuthContextType };
+
 
 export const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
