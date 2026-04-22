@@ -7,7 +7,7 @@ export default function Contact() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {/* Contact Info Cards */}
           <div className="bg-white rounded-2xl shadow-lg p-8 text-center">
-            <div className="text-4xl text-blue-500 mb-4 flex justify-center">
+            <div className="text-6xl text-blue-500 mb-4 flex justify-center">
               <i className="fa-solid fa-phone"></i>
             </div>
             <h3 className="text-xl font-bold text-gray-800 mb-2">Téléphone</h3>
@@ -16,7 +16,7 @@ export default function Contact() {
           </div>
 
           <div className="bg-white rounded-2xl shadow-lg p-8 text-center">
-            <div className="text-4xl text-green-500 mb-4 flex justify-center">
+            <div className="text-6xl text-green-500 mb-4 flex justify-center">
               <i className="fa-solid fa-envelope"></i>
             </div>
             <h3 className="text-xl font-bold text-gray-800 mb-2">Email</h3>
@@ -25,7 +25,7 @@ export default function Contact() {
           </div>
 
           <div className="bg-white rounded-2xl shadow-lg p-8 text-center">
-            <div className="text-4xl text-purple-500 mb-4 flex justify-center">
+            <div className="text-6xl text-purple-500 mb-4 flex justify-center">
               <i className="fa-solid fa-map-marker-alt"></i>
             </div>
             <h3 className="text-xl font-bold text-gray-800 mb-2">Bureau</h3>

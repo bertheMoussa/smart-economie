@@ -102,7 +102,7 @@ export default function Home() {
             <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition p-6 border-t-4 border-green-500">
               <div className="flex items-center gap-3 mb-4">
                 <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-green-500 text-white text-lg">
+                  <div className="flex items-center justify-center h-16 w-16 rounded-lg bg-green-500 text-white text-2xl">
                     <i className="fa-solid fa-flash"></i>
                   </div>
                 </div>
@@ -115,7 +115,7 @@ export default function Home() {
             <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition p-6 border-t-4 border-blue-500">
               <div className="flex items-center gap-3 mb-4">
                 <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-blue-500 text-white text-lg">
+                  <div className="flex items-center justify-center h-16 w-16 rounded-lg bg-blue-500 text-white text-2xl">
                     <i className="fa-solid fa-hand-holding-heart"></i>
                   </div>
                 </div>
@@ -128,7 +128,7 @@ export default function Home() {
             <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition p-6 border-t-4 border-purple-500">
               <div className="flex items-center gap-3 mb-4">
                 <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-purple-500 text-white text-lg">
+                  <div className="flex items-center justify-center h-16 w-16 rounded-lg bg-purple-500 text-white text-2xl">
                     <i className="fa-solid fa-wallet"></i>
                   </div>
                 </div>
@@ -141,7 +141,7 @@ export default function Home() {
             <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition p-6 border-t-4 border-orange-500">
               <div className="flex items-center gap-3 mb-4">
                 <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-orange-500 text-white text-lg">
+                  <div className="flex items-center justify-center h-16 w-16 rounded-lg bg-orange-500 text-white text-2xl">
                     <i className="fa-solid fa-file-contract"></i>
                   </div>
                 </div>
@@ -154,7 +154,7 @@ export default function Home() {
             <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition p-6 border-t-4 border-indigo-500">
               <div className="flex items-center gap-3 mb-4">
                 <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-indigo-500 text-white text-lg">
+                  <div className="flex items-center justify-center h-16 w-16 rounded-lg bg-indigo-500 text-white text-2xl">
                     <i className="fa-solid fa-user-shield"></i>
                   </div>
                 </div>
@@ -167,7 +167,7 @@ export default function Home() {
             <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition p-6 border-t-4 border-cyan-500">
               <div className="flex items-center gap-3 mb-4">
                 <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-cyan-500 text-white text-lg">
+                  <div className="flex items-center justify-center h-16 w-16 rounded-lg bg-cyan-500 text-white text-2xl">
                     <i className="fa-solid fa-globe"></i>
                   </div>
                 </div>
