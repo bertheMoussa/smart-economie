@@ -4,3 +4,6 @@ export { default as Subscription } from './Subscription';
 export { default as Claims } from './Claims';
 export { default as Contact } from './Contact';
 export { default as History } from './History';
+export { default as Login } from './Login';
+export { default as DashboardParticulier } from './DashboardParticulier';
+export { default as DashboardEntreprise } from './DashboardEntreprise';

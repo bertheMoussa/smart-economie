@@ -1,7 +1,9 @@
 import { Link, useLocation } from 'react-router-dom';
+import { useAuth } from '../../hooks/useAuth';
 
 export default function Header() {
   const location = useLocation();
+  const { isAuthenticated, user, logout } = useAuth();
 
   const navItems = [
     { label: 'Accueil', path: '/' },
@@ -13,6 +15,15 @@ export default function Header() {
   ];
 
   const isActive = (path: string) => location.pathname === path;
+
+  const getDashboardLink = () => {
+    if (user?.type === 'particulier') {
+      return '/dashboard/particulier';
+    } else if (user?.type === 'entreprise') {
+      return '/dashboard/entreprise';
+    }
+    return '/login';
+  };
 
   return (
     <header className="bg-white py-2 shadow-sm relative z-10 w-full sticky top-0">
@@ -41,9 +52,30 @@ export default function Header() {
               <span className="text-red-600">FR</span> | <span className="text-gray-500">EN</span> |{' '}
               <span className="text-gray-500">AR</span>
             </div>
-            <button className="bg-[#0a2342] text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-blue-800 transition shadow-md">
-              Espace personnel
-            </button>
+            {isAuthenticated ? (
+              <div className="flex items-center gap-3">
+                <Link
+                  to={getDashboardLink()}
+                  className="bg-green-500 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-green-600 transition shadow-md"
+                >
+                  <i className="fa-solid fa-user mr-1"></i>
+                  Mon Espace
+                </Link>
+                <button
+                  onClick={logout}
+                  className="bg-red-500 text-white px-3 py-2 rounded-full text-sm font-semibold hover:bg-red-600 transition"
+                >
+                  <i className="fa-solid fa-sign-out"></i>
+                </button>
+              </div>
+            ) : (
+              <Link
+                to="/login"
+                className="bg-[#0a2342] text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-blue-800 transition shadow-md"
+              >
+                Espace personnel
+              </Link>
+            )}
           </div>
         </div>
 
