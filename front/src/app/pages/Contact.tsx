@@ -16,7 +16,7 @@ export default function Contact() {
           </div>
 
           <div className="bg-white rounded-2xl shadow-lg p-8 text-center">
-            <div className="text-6xl text-green-500 mb-4 flex justify-center">
+            <div className="text-6xl text-[#228B22] mb-4 flex justify-center">
               <i className="fa-solid fa-envelope"></i>
             </div>
             <h3 className="text-xl font-bold text-gray-800 mb-2">Email</h3>
@@ -43,22 +43,22 @@ export default function Contact() {
               <input
                 type="text"
                 placeholder="Nom complet"
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#228B22]"
               />
 
               <input
                 type="email"
                 placeholder="Adresse email"
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#228B22]"
               />
 
               <input
                 type="tel"
                 placeholder="Téléphone"
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#228B22]"
               />
 
-              <select className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+              <select className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#228B22]">
                 <option>Sujet du message</option>
                 <option>Question générale</option>
                 <option>Support technique</option>
@@ -69,12 +69,12 @@ export default function Contact() {
               <textarea
                 placeholder="Votre message"
                 rows={5}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#228B22]"
               ></textarea>
 
               <button
                 type="submit"
-                className="w-full bg-green-500 text-white font-bold py-3 rounded-lg hover:bg-green-600 transition"
+                className="w-full bg-[#228B22] text-white font-bold py-3 rounded-lg hover:bg-[#1a6b1a] transition"
               >
                 Envoyer le message
               </button>
@@ -86,22 +86,22 @@ export default function Contact() {
             <h2 className="text-2xl font-bold text-[#0a2342] mb-6">Questions Fréquentes</h2>
 
             <div className="space-y-4">
-              <div className="border-l-4 border-green-500 pl-4">
+              <div className="border-l-4 border-[#228B22] pl-4">
                 <h3 className="font-bold text-gray-800 mb-1">Quel est le délai de traitement?</h3>
                 <p className="text-sm text-gray-600">Nous traitons les demandes sous 24-48 heures</p>
               </div>
 
-              <div className="border-l-4 border-green-500 pl-4">
+              <div className="border-l-4 border-[#228B22] pl-4">
                 <h3 className="font-bold text-gray-800 mb-1">Comment modifier ma souscription?</h3>
                 <p className="text-sm text-gray-600">Accédez à votre espace personnel pour modifier vos informations</p>
               </div>
 
-              <div className="border-l-4 border-green-500 pl-4">
+              <div className="border-l-4 border-[#228B22] pl-4">
                 <h3 className="font-bold text-gray-800 mb-1">Puis-je résilier mon contrat?</h3>
                 <p className="text-sm text-gray-600">Oui, avec un préavis de 30 jours via votre espace personnel</p>
               </div>
 
-              <div className="border-l-4 border-green-500 pl-4">
+              <div className="border-l-4 border-[#228B22] pl-4">
                 <h3 className="font-bold text-gray-800 mb-1">Comment accéder à la cagnotte communautaire?</h3>
                 <p className="text-sm text-gray-600">Les membres du Plan Avantages et Premium y ont accès</p>
               </div>

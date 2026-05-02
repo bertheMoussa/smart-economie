@@ -6,6 +6,7 @@ export default function DashboardParticulier() {
   const navigate = useNavigate();
   const { user, logout } = useAuth();
   const [activeTab, setActiveTab] = useState('overview');
+  const [showClaimForm, setShowClaimForm] = useState(false);
 
   if (!user) {
     navigate('/login');
@@ -60,7 +61,7 @@ export default function DashboardParticulier() {
               onClick={() => setActiveTab(tab.id)}
               className={`flex items-center gap-2 px-4 py-2 rounded-lg font-semibold transition ${
                 activeTab === tab.id
-                  ? 'bg-green-500 text-white'
+                  ? 'bg-[#228B22] text-white'
                   : 'text-gray-700 hover:bg-gray-100'
               }`}
             >
@@ -115,14 +116,14 @@ export default function DashboardParticulier() {
           <div className="bg-white rounded-2xl shadow-lg p-8">
             <h3 className="text-xl font-bold text-[#0a2342] mb-6">Mes Souscriptions</h3>
             <div className="space-y-4">
-              <div className="border-l-4 border-green-500 pl-4 py-4">
+              <div className="border-l-4 border-[#228B22] pl-4 py-4">
                 <div className="flex justify-between items-start">
                   <div>
                     <h4 className="font-bold text-gray-800">Plan Avantages</h4>
                     <p className="text-sm text-gray-600">59€ / mois</p>
                     <p className="text-xs text-gray-500 mt-1">Souscrit le 15 janvier 2026</p>
                   </div>
-                  <span className="px-3 py-1 rounded-full bg-green-100 text-green-700 text-xs font-bold">
+                  <span className="px-3 py-1 rounded-full bg-[#e8f5e9] text-[#228B22] text-xs font-bold">
                     Actif
                   </span>
                 </div>
@@ -133,9 +134,104 @@ export default function DashboardParticulier() {
 
         {activeTab === 'claims' && (
           <div className="bg-white rounded-2xl shadow-lg p-8">
-            <h3 className="text-xl font-bold text-[#0a2342] mb-6">Mes Sinistres</h3>
+            <div className="flex justify-between items-center mb-6">
+              <h3 className="text-xl font-bold text-[#0a2342]">Mes Sinistres</h3>
+              <button
+                onClick={() => setShowClaimForm(!showClaimForm)}
+                className="bg-[#228B22] text-white px-4 py-2 rounded-lg font-semibold hover:bg-[#1a6b1a] transition"
+              >
+                <i className="fa-solid fa-plus mr-2"></i>
+                Déclarer un sinistre
+              </button>
+            </div>
+
+            {showClaimForm && (
+              <div className="bg-gray-50 rounded-xl p-6 mb-8 border border-gray-200">
+                <h4 className="font-bold text-[#0a2342] mb-4">Nouvelle déclaration de sinistre</h4>
+                
+                <form className="space-y-4">
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-medium mb-2">Type de sinistre</label>
+                      <select className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#228B22]">
+                        <option>Choisir...</option>
+                        <option>Sinistre matériel</option>
+                        <option>Sinistre corporel</option>
+                        <option>Responsabilité civile</option>
+                        <option>Vol/Incendie</option>
+                        <option>Autre</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium mb-2">Date du sinistre</label>
+                      <input
+                        type="date"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#228B22]"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium mb-2">Lieu du sinistre</label>
+                    <input
+                      type="text"
+                      placeholder="Ex: Rue de la Paix, Paris"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#228B22]"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium mb-2">Description détaillée</label>
+                    <textarea
+                      placeholder="Décrivez les circonstances du sinistre..."
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#228B22]"
+                      rows={4}
+                    ></textarea>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium mb-2">Montant du dommage estimé</label>
+                    <div className="flex items-center">
+                      <span className="text-gray-600 mr-2">€</span>
+                      <input
+                        type="number"
+                        placeholder="0.00"
+                        className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#228B22]"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium mb-2">Pièces jointes</label>
+                    <input
+                      type="file"
+                      multiple
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#228B22]"
+                    />
+                    <p className="text-xs text-gray-500 mt-1">Photos, documents, factures, etc.</p>
+                  </div>
+
+                  <div className="flex gap-4">
+                    <button
+                      type="button"
+                      onClick={() => setShowClaimForm(false)}
+                      className="flex-1 border-2 border-gray-300 text-gray-700 py-2 rounded-lg font-semibold hover:border-gray-400 transition"
+                    >
+                      Annuler
+                    </button>
+                    <button
+                      type="submit"
+                      className="flex-1 bg-[#228B22] text-white py-2 rounded-lg font-semibold hover:bg-[#1a6b1a] transition"
+                    >
+                      Déclarer le sinistre
+                    </button>
+                  </div>
+                </form>
+              </div>
+            )}
+
             <div className="text-center py-12">
-              <i className="fa-solid fa-check-circle text-green-500 text-5xl mb-4"></i>
+              <i className="fa-solid fa-check-circle text-[#228B22] text-5xl mb-4"></i>
               <p className="text-gray-600">Aucun sinistre déclaré</p>
             </div>
           </div>

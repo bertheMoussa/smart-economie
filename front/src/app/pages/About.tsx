@@ -14,7 +14,7 @@ export default function About() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           <div className="bg-white rounded-2xl shadow-lg p-8">
             <h2 className="text-2xl font-bold text-[#0a2342] mb-4 flex items-center gap-2">
-              <i className="fa-solid fa-target text-green-500"></i>
+              <i className="fa-solid fa-target text-[#228B22]"></i>
               Notre Mission
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
@@ -27,35 +27,35 @@ export default function About() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-br from-blue-50 to-green-50 rounded-2xl shadow-lg p-8 border-l-4 border-green-500">
+          <div className="bg-gradient-to-br from-blue-50 to-green-50 rounded-2xl shadow-lg p-8 border-l-4 border-[#228B22]">
             <h3 className="text-2xl font-bold text-[#0a2342] mb-6 flex items-center gap-2">
               <i className="fa-solid fa-heart text-red-500"></i>
               Nos Valeurs
             </h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <span className="text-green-500 font-bold text-lg">✓</span>
+                <span className="text-[#228B22] font-bold text-lg">✓</span>
                 <div>
                   <span className="font-bold text-gray-800">Transparence totale</span>
                   <p className="text-sm text-gray-600">Aucun intérêt perçu, redistribution des excédents</p>
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-green-500 font-bold text-lg">✓</span>
+                <span className="text-[#228B22] font-bold text-lg">✓</span>
                 <div>
                   <span className="font-bold text-gray-800">Conformité Sharia</span>
                   <p className="text-sm text-gray-600">Respecte les principes islamiques</p>
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-green-500 font-bold text-lg">✓</span>
+                <span className="text-[#228B22] font-bold text-lg">✓</span>
                 <div>
                   <span className="font-bold text-gray-800">Communauté solidaire</span>
                   <p className="text-sm text-gray-600">Entraide et support mutuel</p>
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-green-500 font-bold text-lg">✓</span>
+                <span className="text-[#228B22] font-bold text-lg">✓</span>
                 <div>
                   <span className="font-bold text-gray-800">Équité pour tous</span>
                   <p className="text-sm text-gray-600">Égalité d'accès et de traitement</p>
@@ -72,10 +72,10 @@ export default function About() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Feature 1 */}
-            <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition p-6 border-t-4 border-green-500">
+            <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition p-6 border-t-4 border-[#228B22]\">
               <div className="flex items-start gap-4 mb-4">
                 <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-16 w-16 rounded-lg bg-green-500 text-white text-2xl">
+                  <div className="flex items-center justify-center h-16 w-16 rounded-lg bg-[#228B22] text-white text-2xl\">
                     <i className="fa-solid fa-flash"></i>
                   </div>
                 </div>
@@ -176,14 +176,14 @@ export default function About() {
         </div>
 
         {/* How It Works */}
-        <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl shadow-lg p-12 border-l-4 border-green-500">
+        <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl shadow-lg p-12 border-l-4 border-[#228B22]\">
           <h2 className="text-3xl font-bold text-[#0a2342] mb-4">Comment Ça Fonctionne</h2>
           <p className="text-gray-600 mb-10">Trois étapes simples pour rejoindre notre communauté</p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="mb-4 flex justify-center">
-                <div className="w-16 h-16 rounded-full bg-green-500 text-white flex items-center justify-center text-2xl font-bold shadow-lg">
+                <div className="w-16 h-16 rounded-full bg-[#228B22] text-white flex items-center justify-center text-2xl font-bold shadow-lg">
                   1
                 </div>
               </div>
@@ -195,7 +195,7 @@ export default function About() {
 
             <div className="text-center">
               <div className="mb-4 flex justify-center">
-                <div className="w-16 h-16 rounded-full bg-green-500 text-white flex items-center justify-center text-2xl font-bold shadow-lg">
+                <div className="w-16 h-16 rounded-full bg-[#228B22] text-white flex items-center justify-center text-2xl font-bold shadow-lg">
                   2
                 </div>
               </div>
@@ -207,7 +207,7 @@ export default function About() {
 
             <div className="text-center">
               <div className="mb-4 flex justify-center">
-                <div className="w-16 h-16 rounded-full bg-green-500 text-white flex items-center justify-center text-2xl font-bold shadow-lg">
+                <div className="w-16 h-16 rounded-full bg-[#228B22] text-white flex items-center justify-center text-2xl font-bold shadow-lg">
                   3
                 </div>
               </div>

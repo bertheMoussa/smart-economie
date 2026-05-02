@@ -6,6 +6,7 @@ export default function DashboardEntreprise() {
   const navigate = useNavigate();
   const { user, logout } = useAuth();
   const [activeTab, setActiveTab] = useState('overview');
+  const [showClaimForm, setShowClaimForm] = useState(false);
 
   if (!user) {
     navigate('/login');
@@ -62,7 +63,7 @@ export default function DashboardEntreprise() {
               onClick={() => setActiveTab(tab.id)}
               className={`flex items-center gap-2 px-4 py-2 rounded-lg font-semibold transition whitespace-nowrap ${
                 activeTab === tab.id
-                  ? 'bg-green-500 text-white'
+                  ? 'bg-[#228B22] text-white'
                   : 'text-gray-700 hover:bg-gray-100'
               }`}
             >
@@ -117,7 +118,7 @@ export default function DashboardEntreprise() {
           <div className="bg-white rounded-2xl shadow-lg p-8">
             <div className="flex justify-between items-center mb-6">
               <h3 className="text-xl font-bold text-[#0a2342]">Gestion des Employés</h3>
-              <button className="bg-green-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-green-600">
+              <button className="bg-[#228B22] text-white px-4 py-2 rounded-lg font-semibold hover:bg-[#1a6b1a]">
                 <i className="fa-solid fa-plus mr-2"></i>Ajouter un employé
               </button>
             </div>
@@ -143,7 +144,7 @@ export default function DashboardEntreprise() {
                       <td className="px-4 py-3 text-sm">
                         <span className={`px-3 py-1 rounded-full text-xs font-bold ${
                           employee.status === 'Actif'
-                            ? 'bg-green-100 text-green-700'
+                            ? 'bg-[#e8f5e9] text-[#228B22]'
                             : 'bg-gray-100 text-gray-700'
                         }`}>
                           {employee.status}
@@ -174,12 +175,12 @@ export default function DashboardEntreprise() {
                 { name: 'Assurance Santé Collective', price: '890€/mois', status: 'Actif' },
                 { name: 'Protection Décès', price: '90€/mois', status: 'Actif' },
               ].map((contract, idx) => (
-                <div key={idx} className="border-l-4 border-green-500 pl-4 py-4 flex justify-between">
+                <div key={idx} className="border-l-4 border-[#228B22] pl-4 py-4 flex justify-between">
                   <div>
                     <h4 className="font-bold text-gray-800">{contract.name}</h4>
                     <p className="text-sm text-gray-600">{contract.price}</p>
                   </div>
-                  <span className="px-3 py-1 rounded-full bg-green-100 text-green-700 text-xs font-bold h-fit">
+                  <span className="px-3 py-1 rounded-full bg-[#e8f5e9] text-[#228B22] text-xs font-bold h-fit">
                     {contract.status}
                   </span>
                 </div>
@@ -190,7 +191,103 @@ export default function DashboardEntreprise() {
 
         {activeTab === 'claims' && (
           <div className="bg-white rounded-2xl shadow-lg p-8">
-            <h3 className="text-xl font-bold text-[#0a2342] mb-6">Sinistres Déclarés</h3>
+            <div className="flex justify-between items-center mb-6">
+              <h3 className="text-xl font-bold text-[#0a2342]">Sinistres Déclarés</h3>
+              <button
+                onClick={() => setShowClaimForm(!showClaimForm)}
+                className="bg-[#228B22] text-white px-4 py-2 rounded-lg font-semibold hover:bg-[#1a6b1a] transition"
+              >
+                <i className="fa-solid fa-plus mr-2"></i>
+                Déclarer un sinistre
+              </button>
+            </div>
+
+            {showClaimForm && (
+              <div className="bg-gray-50 rounded-xl p-6 mb-8 border border-gray-200">
+                <h4 className="font-bold text-[#0a2342] mb-4">Nouvelle déclaration de sinistre</h4>
+                
+                <form className="space-y-4">
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-medium mb-2">Employé concerné</label>
+                      <select className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#228B22]">
+                        <option>Choisir...</option>
+                        <option>Ahmed Ali</option>
+                        <option>Fatima Hassan</option>
+                        <option>Mohamed Salam</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium mb-2">Type de sinistre</label>
+                      <select className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#228B22]">
+                        <option>Choisir...</option>
+                        <option>Accident du travail</option>
+                        <option>Maladie professionnelle</option>
+                        <option>Responsabilité civile</option>
+                        <option>Dommages matériels</option>
+                        <option>Autre</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium mb-2">Date du sinistre</label>
+                    <input
+                      type="date"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#228B22]"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium mb-2">Description détaillée</label>
+                    <textarea
+                      placeholder="Décrivez les circonstances du sinistre..."
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#228B22]"
+                      rows={4}
+                    ></textarea>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium mb-2">Montant du dommage estimé</label>
+                    <div className="flex items-center">
+                      <span className="text-gray-600 mr-2">€</span>
+                      <input
+                        type="number"
+                        placeholder="0.00"
+                        className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#228B22]"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium mb-2">Pièces jointes</label>
+                    <input
+                      type="file"
+                      multiple
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#228B22]"
+                    />
+                    <p className="text-xs text-gray-500 mt-1">Photos, documents, factures, rapports d'accident, etc.</p>
+                  </div>
+
+                  <div className="flex gap-4">
+                    <button
+                      type="button"
+                      onClick={() => setShowClaimForm(false)}
+                      className="flex-1 border-2 border-gray-300 text-gray-700 py-2 rounded-lg font-semibold hover:border-gray-400 transition"
+                    >
+                      Annuler
+                    </button>
+                    <button
+                      type="submit"
+                      className="flex-1 bg-[#228B22] text-white py-2 rounded-lg font-semibold hover:bg-[#1a6b1a] transition"
+                    >
+                      Déclarer le sinistre
+                    </button>
+                  </div>
+                </form>
+              </div>
+            )}
+
             <div className="space-y-4">
               {[
                 { id: '001', employee: 'Ahmed Ali', date: '10/03/2026', status: 'En cours' },
@@ -205,7 +302,7 @@ export default function DashboardEntreprise() {
                     <span className={`px-3 py-1 rounded-full text-xs font-bold ${
                       claim.status === 'En cours'
                         ? 'bg-yellow-100 text-yellow-700'
-                        : 'bg-green-100 text-green-700'
+                        : 'bg-[#e8f5e9] text-[#228B22]'
                     }`}>
                       {claim.status}
                     </span>
@@ -226,7 +323,7 @@ export default function DashboardEntreprise() {
               </div>
               <div className="p-6 border rounded-lg">
                 <h4 className="font-bold text-gray-800 mb-4">Économies Réalisées</h4>
-                <div className="text-3xl font-bold text-green-600">4.200€</div>
+                <div className="text-3xl font-bold text-[#228B22]">4.200€</div>
               </div>
             </div>
           </div>

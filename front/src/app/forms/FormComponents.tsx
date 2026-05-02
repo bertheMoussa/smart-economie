@@ -25,7 +25,7 @@ export function FormInput({ label, placeholder, type = 'text', error, required, 
         className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 transition ${
           error
             ? 'border-red-500 focus:ring-red-500'
-            : 'border-gray-300 focus:ring-green-500'
+            : 'border-gray-300 focus:ring-[#228B22]'
         }`}
         {...props}
       />
@@ -66,7 +66,7 @@ export function FormTextArea({
         className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 transition ${
           error
             ? 'border-red-500 focus:ring-red-500'
-            : 'border-gray-300 focus:ring-green-500'
+            : 'border-gray-300 focus:ring-[#228B22]'
         }`}
         {...props}
       />
@@ -97,7 +97,7 @@ export function FormSelect({ label, options, error, required, ...props }: Select
         className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 transition ${
           error
             ? 'border-red-500 focus:ring-red-500'
-            : 'border-gray-300 focus:ring-green-500'
+            : 'border-gray-300 focus:ring-[#228B22]'
         }`}
         {...props}
       >
@@ -126,7 +126,7 @@ export function FormCheckbox({ label, error, ...props }: CheckboxProps) {
       <div className="flex items-center gap-2">
         <input
           type="checkbox"
-          className="w-4 h-4 border border-gray-300 rounded focus:ring-2 focus:ring-green-500 accent-green-500"
+          className="w-4 h-4 border border-gray-300 rounded focus:ring-2 focus:ring-[#228B22] accent-[#228B22]"
           {...props}
         />
         {label && <label className="text-sm text-gray-700">{label}</label>}
@@ -152,7 +152,7 @@ export function FormButton({
   const baseClasses = 'w-full font-bold py-3 rounded-lg transition disabled:opacity-50';
 
   const variantClasses = {
-    primary: 'bg-green-500 text-white hover:bg-green-600',
+    primary: 'bg-[#228B22] text-white hover:bg-[#1a6b1a]',
     secondary: 'bg-blue-500 text-white hover:bg-blue-600',
     danger: 'bg-red-500 text-white hover:bg-red-600',
   };

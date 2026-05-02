@@ -104,9 +104,9 @@ export function getPlanColorClass(
         border: 'border-blue-500',
       },
       green: {
-        bg: 'from-green-500 to-green-600',
-        text: 'text-green-500',
-        border: 'border-green-500',
+        bg: 'from-[#228B22] to-[#1a6b1a]',
+        text: 'text-[#228B22]',
+        border: 'border-[#228B22]',
       },
       purple: {
         bg: 'from-purple-500 to-purple-600',

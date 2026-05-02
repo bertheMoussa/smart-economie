@@ -25,19 +25,19 @@ export default function Subscription() {
             <div className="p-6">
               <ul className="space-y-3 mb-6">
                 <li className="flex items-center gap-2">
-                  <i className="fa-solid fa-check text-green-500 font-bold"></i>
+                  <i className="fa-solid fa-check text-[#228B22] font-bold"></i>
                   <span className="text-gray-700">Couverture de base</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <i className="fa-solid fa-check text-green-500 font-bold"></i>
+                  <i className="fa-solid fa-check text-[#228B22] font-bold"></i>
                   <span className="text-gray-700">Support client 24/7</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <i className="fa-solid fa-check text-green-500 font-bold"></i>
+                  <i className="fa-solid fa-check text-[#228B22] font-bold"></i>
                   <span className="text-gray-700">Accès au portail</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <i className="fa-solid fa-check text-green-500 font-bold"></i>
+                  <i className="fa-solid fa-check text-[#228B22] font-bold"></i>
                   <span className="text-gray-700">Espace personnel</span>
                 </li>
                 <li className="flex items-center gap-2">
@@ -55,7 +55,7 @@ export default function Subscription() {
           </div>
 
           {/* Plan 2 (Popular) */}
-          <div className="bg-white rounded-2xl shadow-lg overflow-hidden transform scale-105 border-2 border-green-500">
+          <div className="bg-white rounded-2xl shadow-lg overflow-hidden transform scale-105 border-2 border-[#228B22]">
             <div className="bg-gradient-to-r from-green-500 to-green-600 text-white p-6 relative">
               <div className="absolute top-3 right-3 bg-yellow-400 text-gray-900 px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
                 <i className="fa-solid fa-star"></i>
@@ -63,35 +63,35 @@ export default function Subscription() {
               </div>
               <h2 className="text-2xl font-bold mb-2">Plan Avantages</h2>
               <div className="text-4xl font-bold">59€</div>
-              <p className="text-green-100 text-sm">/mois</p>
-              <p className="text-green-100 text-xs mt-2">Notre meilleure offre</p>
+              <p className="text-white text-sm">/mois</p>
+              <p className="text-white text-xs mt-2">Notre meilleure offre</p>
             </div>
             <div className="p-6">
               <ul className="space-y-3 mb-6">
                 <li className="flex items-center gap-2">
-                  <i className="fa-solid fa-check text-green-500 font-bold"></i>
+                  <i className="fa-solid fa-check text-[#228B22] font-bold"></i>
                   <span className="text-gray-700">Couverture complète</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <i className="fa-solid fa-check text-green-500 font-bold"></i>
+                  <i className="fa-solid fa-check text-[#228B22] font-bold"></i>
                   <span className="text-gray-700">Support prioritaire</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <i className="fa-solid fa-check text-green-500 font-bold"></i>
+                  <i className="fa-solid fa-check text-[#228B22] font-bold"></i>
                   <span className="text-gray-700">Accès cagnotte</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <i className="fa-solid fa-check text-green-500 font-bold"></i>
+                  <i className="fa-solid fa-check text-[#228B22] font-bold"></i>
                   <span className="text-gray-700">Remboursement 100%</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <i className="fa-solid fa-check text-green-500 font-bold"></i>
+                  <i className="fa-solid fa-check text-[#228B22] font-bold"></i>
                   <span className="text-gray-700">Assistance avancée</span>
                 </li>
               </ul>
               <Link
                 to="/login"
-                className="block w-full bg-green-500 text-white font-bold py-3 rounded-lg text-center hover:bg-green-600 transition"
+                className="block w-full bg-[#228B22] text-white font-bold py-3 rounded-lg text-center hover:bg-[#1a6b1a] transition"
               >
                 Choisir ce plan
               </Link>
@@ -109,23 +109,23 @@ export default function Subscription() {
             <div className="p-6">
               <ul className="space-y-3 mb-6">
                 <li className="flex items-center gap-2">
-                  <i className="fa-solid fa-check text-green-500 font-bold"></i>
+                  <i className="fa-solid fa-check text-[#228B22] font-bold"></i>
                   <span className="text-gray-700">Couverture maximale</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <i className="fa-solid fa-check text-green-500 font-bold"></i>
+                  <i className="fa-solid fa-check text-[#228B22] font-bold"></i>
                   <span className="text-gray-700">Gestionnaire personnel</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <i className="fa-solid fa-check text-green-500 font-bold"></i>
+                  <i className="fa-solid fa-check text-[#228B22] font-bold"></i>
                   <span className="text-gray-700">Assistance 24/7 VIP</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <i className="fa-solid fa-check text-green-500 font-bold"></i>
+                  <i className="fa-solid fa-check text-[#228B22] font-bold"></i>
                   <span className="text-gray-700">Avantages exclusifs</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <i className="fa-solid fa-check text-green-500 font-bold"></i>
+                  <i className="fa-solid fa-check text-[#228B22] font-bold"></i>
                   <span className="text-gray-700">Priorité absolue</span>
                 </li>
               </ul>
@@ -148,40 +148,40 @@ export default function Subscription() {
                 <tr className="bg-gradient-to-r from-blue-50 to-green-50">
                   <th className="text-left px-6 py-4 font-bold text-gray-700">Fonctionnalité</th>
                   <th className="text-center px-6 py-4 font-bold text-gray-700">Essentiel</th>
-                  <th className="text-center px-6 py-4 font-bold text-green-600 bg-green-50">Avantages</th>
+                  <th className="text-center px-6 py-4 font-bold text-[#228B22] bg-[#e8f5e9]">Avantages</th>
                   <th className="text-center px-6 py-4 font-bold text-gray-700">Premium</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
                 <tr>
                   <td className="px-6 py-4 text-gray-700 font-semibold">Couverture de base</td>
-                  <td className="text-center px-6 py-4"><i className="fa-solid fa-check text-green-500"></i></td>
-                  <td className="text-center px-6 py-4 bg-green-50"><i className="fa-solid fa-check text-green-500"></i></td>
-                  <td className="text-center px-6 py-4"><i className="fa-solid fa-check text-green-500"></i></td>
+                  <td className="text-center px-6 py-4"><i className="fa-solid fa-check text-[#228B22]"></i></td>
+                  <td className="text-center px-6 py-4 bg-[#e8f5e9]"><i className="fa-solid fa-check text-[#228B22]"></i></td>
+                  <td className="text-center px-6 py-4"><i className="fa-solid fa-check text-[#228B22]"></i></td>
                 </tr>
                 <tr>
                   <td className="px-6 py-4 text-gray-700 font-semibold">Support client</td>
                   <td className="text-center px-6 py-4">24/7</td>
-                  <td className="text-center px-6 py-4 bg-green-50">Prioritaire</td>
+                  <td className="text-center px-6 py-4 bg-[#e8f5e9]">Prioritaire</td>
                   <td className="text-center px-6 py-4">VIP</td>
                 </tr>
                 <tr>
                   <td className="px-6 py-4 text-gray-700 font-semibold">Cagnotte Communautaire</td>
                   <td className="text-center px-6 py-4"><i className="fa-times text-gray-300"></i></td>
-                  <td className="text-center px-6 py-4 bg-green-50"><i className="fa-solid fa-check text-green-500"></i></td>
-                  <td className="text-center px-6 py-4"><i className="fa-solid fa-check text-green-500"></i></td>
+                  <td className="text-center px-6 py-4 bg-[#e8f5e9]"><i className="fa-solid fa-check text-[#228B22]"></i></td>
+                  <td className="text-center px-6 py-4"><i className="fa-solid fa-check text-[#228B22]"></i></td>
                 </tr>
                 <tr>
                   <td className="px-6 py-4 text-gray-700 font-semibold">Gestionnaire personnel</td>
                   <td className="text-center px-6 py-4"><i className="fa-times text-gray-300"></i></td>
-                  <td className="text-center px-6 py-4 bg-green-50"><i className="fa-times text-gray-300"></i></td>
-                  <td className="text-center px-6 py-4"><i className="fa-solid fa-check text-green-500"></i></td>
+                  <td className="text-center px-6 py-4 bg-[#e8f5e9]"><i className="fa-times text-gray-300"></i></td>
+                  <td className="text-center px-6 py-4"><i className="fa-solid fa-check text-[#228B22]"></i></td>
                 </tr>
                 <tr>
                   <td className="px-6 py-4 text-gray-700 font-semibold">Espace personnel</td>
-                  <td className="text-center px-6 py-4"><i className="fa-solid fa-check text-green-500"></i></td>
-                  <td className="text-center px-6 py-4 bg-green-50"><i className="fa-solid fa-check text-green-500"></i></td>
-                  <td className="text-center px-6 py-4"><i className="fa-solid fa-check text-green-500"></i></td>
+                  <td className="text-center px-6 py-4"><i className="fa-solid fa-check text-[#228B22]"></i></td>
+                  <td className="text-center px-6 py-4 bg-[#e8f5e9]"><i className="fa-solid fa-check text-[#228B22]"></i></td>
+                  <td className="text-center px-6 py-4"><i className="fa-solid fa-check text-[#228B22]"></i></td>
                 </tr>
               </tbody>
             </table>
@@ -194,7 +194,7 @@ export default function Subscription() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-white rounded-xl p-6 shadow-md">
               <h3 className="font-bold text-[#0a2342] mb-2 flex items-center gap-2">
-                <i className="fa-solid fa-circle-question text-green-500"></i>
+                <i className="fa-solid fa-circle-question text-[#228B22]"></i>
                 Puis-je changer de plan?
               </h3>
               <p className="text-gray-600 text-sm">Oui, vous pouvez changer de plan à tout moment à partir de votre espace personnel.</p>
@@ -202,7 +202,7 @@ export default function Subscription() {
 
             <div className="bg-white rounded-xl p-6 shadow-md">
               <h3 className="font-bold text-[#0a2342] mb-2 flex items-center gap-2">
-                <i className="fa-solid fa-circle-question text-green-500"></i>
+                <i className="fa-solid fa-circle-question text-[#228B22]"></i>
                 Puis-je résilier mon contrat?
               </h3>
               <p className="text-gray-600 text-sm">Vous pouvez résilier à tout moment sans frais supplémentaires. Pas d'engagement!</p>
@@ -210,7 +210,7 @@ export default function Subscription() {
 
             <div className="bg-white rounded-xl p-6 shadow-md">
               <h3 className="font-bold text-[#0a2342] mb-2 flex items-center gap-2">
-                <i className="fa-solid fa-circle-question text-green-500"></i>
+                <i className="fa-solid fa-circle-question text-[#228B22]"></i>
                 Y a-t-il des frais cachés?
               </h3>
               <p className="text-gray-600 text-sm">Non! Tous nos prix sont transparents. Ce que vous voyez est ce que vous payez.</p>
@@ -218,7 +218,7 @@ export default function Subscription() {
 
             <div className="bg-white rounded-xl p-6 shadow-md">
               <h3 className="font-bold text-[#0a2342] mb-2 flex items-center gap-2">
-                <i className="fa-solid fa-circle-question text-green-500"></i>
+                <i className="fa-solid fa-circle-question text-[#228B22]"></i>
                 Comment se fait le paiement?
               </h3>
               <p className="text-gray-600 text-sm">Plusieurs options: carte bancaire, virement, ou wallet islamique certifié.</p>
@@ -229,10 +229,10 @@ export default function Subscription() {
         {/* CTA */}
         <div className="bg-gradient-to-r from-green-500 to-blue-500 rounded-2xl shadow-lg p-12 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Prêt à commencer?</h2>
-          <p className="text-green-100 mb-6">Souscrivez maintenant et rejoignez des milliers de membres satisfaits.</p>
+          <p className="text-white mb-6">Souscrivez maintenant et rejoignez des milliers de membres satisfaits.</p>
           <Link
             to="/login"
-            className="inline-block bg-white text-green-600 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition"
+            className="inline-block bg-white text-[#228B22] px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition"
           >
             <i className="fa-solid fa-arrow-right mr-2"></i>
             Commencer ma souscription

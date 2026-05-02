@@ -72,15 +72,15 @@ export default function Login() {
   };
 
   return (
-    <div className="bg-[#f0f4f8] min-h-screen py-12">
-      <div className="container mx-auto px-6 max-w-md">
+    <div className="bg-[#f0f4f8] min-h-screen flex items-center justify-center py-12">
+      <div className="w-full px-6 max-w-sm">
         <div className="bg-white rounded-2xl shadow-lg p-8">
           {/* Logo */}
           <div className="text-center mb-8">
             <div className="relative flex items-center justify-center w-14 h-14 rounded-full border-2 border-blue-900 overflow-hidden mx-auto mb-3">
               <span className="text-blue-900 text-3xl font-bold italic mr-1">S</span>
-              <span className="text-green-500 text-xl font-bold absolute bottom-2 right-2">+</span>
-              <i className="fa-solid fa-leaf text-green-500 absolute top-2 right-1 text-xs"></i>
+              <span className="text-[#228B22] text-xl font-bold absolute bottom-2 right-2">+</span>
+              <i className="fa-solid fa-leaf text-[#228B22] absolute top-2 right-1 text-xs"></i>
             </div>
             <h1 className="text-2xl font-bold text-[#0a2342]">Smart-Économie</h1>
             <p className="text-sm text-gray-500 mt-1">L'Assurance Économique</p>
@@ -92,7 +92,7 @@ export default function Login() {
               onClick={() => setIsSignup(false)}
               className={`flex-1 py-2 rounded-lg font-bold transition ${
                 !isSignup
-                  ? 'bg-green-500 text-white'
+                  ? 'bg-[#228B22] text-white'
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
               }`}
             >
@@ -102,7 +102,7 @@ export default function Login() {
               onClick={() => setIsSignup(true)}
               className={`flex-1 py-2 rounded-lg font-bold transition ${
                 isSignup
-                  ? 'bg-green-500 text-white'
+                  ? 'bg-[#228B22] text-white'
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
               }`}
             >
@@ -260,7 +260,7 @@ export default function Login() {
             {isSignup ? 'Vous avez déjà un compte? ' : 'Pas encore de compte? '}
             <button
               onClick={() => setIsSignup(!isSignup)}
-              className="text-green-600 font-semibold hover:text-green-700"
+              className="text-[#228B22] font-semibold hover:text-[#1a6b1a]"
             >
               {isSignup ? 'Se connecter' : "S'inscrire"}
             </button>
@@ -269,7 +269,7 @@ export default function Login() {
 
         {/* Info Box */}
         <div className="mt-6 p-4 bg-white rounded-lg shadow text-center text-sm text-gray-600">
-          <i className="fa-solid fa-shield-check text-green-500 mr-2"></i>
+          <i className="fa-solid fa-shield-check text-[#228B22] mr-2"></i>
           Vos données sont protégées et conformes à Sharia
         </div>
       </div>

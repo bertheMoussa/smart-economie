@@ -6,13 +6,13 @@ export default function History() {
 
         {/* Timeline */}
         <div className="bg-white rounded-2xl shadow-lg p-12 mb-12">
-          <h2 className="text-2xl font-bold text-green-600 mb-8 text-center">Nos Jalons</h2>
+          <h2 className="text-2xl font-bold text-[#228B22] mb-8 text-center">Nos Jalons</h2>
 
           <div className="space-y-8">
             {/* 2020 */}
             <div className="flex gap-6">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12 rounded-full bg-green-500 text-white font-bold text-lg">
+                <div className="flex items-center justify-center h-12 w-12 rounded-full bg-[#228B22] text-white font-bold text-lg">
                   2020
                 </div>
               </div>
@@ -28,7 +28,7 @@ export default function History() {
             {/* 2021 */}
             <div className="flex gap-6">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12 rounded-full bg-green-500 text-white font-bold text-lg">
+                <div className="flex items-center justify-center h-12 w-12 rounded-full bg-[#228B22] text-white font-bold text-lg">
                   2021
                 </div>
               </div>
@@ -44,7 +44,7 @@ export default function History() {
             {/* 2022 */}
             <div className="flex gap-6">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12 rounded-full bg-green-500 text-white font-bold text-lg">
+                <div className="flex items-center justify-center h-12 w-12 rounded-full bg-[#228B22] text-white font-bold text-lg">
                   2022
                 </div>
               </div>
@@ -59,7 +59,7 @@ export default function History() {
             {/* 2023 */}
             <div className="flex gap-6">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12 rounded-full bg-green-500 text-white font-bold text-lg">
+                <div className="flex items-center justify-center h-12 w-12 rounded-full bg-[#228B22] text-white font-bold text-lg">
                   2023
                 </div>
               </div>
@@ -75,7 +75,7 @@ export default function History() {
             {/* 2024 */}
             <div className="flex gap-6">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12 rounded-full bg-green-500 text-white font-bold text-lg">
+                <div className="flex items-center justify-center h-12 w-12 rounded-full bg-[#228B22] text-white font-bold text-lg">
                   2024
                 </div>
               </div>
@@ -93,7 +93,7 @@ export default function History() {
         {/* Values Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           <div className="bg-white rounded-2xl shadow-lg p-8">
-            <h3 className="text-2xl font-bold text-green-600 mb-6">Notre Vision</h3>
+            <h3 className="text-2xl font-bold text-[#228B22] mb-6">Notre Vision</h3>
             <p className="text-gray-700 mb-4">
               Être le leader mondial en assurance éthique et transparente, où chaque communauté peut se sentir en
               sécurité et respectée.
@@ -107,19 +107,19 @@ export default function History() {
             <h3 className="text-2xl font-bold text-blue-600 mb-6">Notre Engagement</h3>
             <div className="space-y-3">
               <p className="flex items-center gap-2 text-gray-700">
-                <i className="fa-solid fa-check text-green-500"></i>
+                <i className="fa-solid fa-check text-[#228B22]"></i>
                 Transparence totale dans tous les processus
               </p>
               <p className="flex items-center gap-2 text-gray-700">
-                <i className="fa-solid fa-check text-green-500"></i>
+                <i className="fa-solid fa-check text-[#228B22]"></i>
                 Respect des valeurs islamiques (Sharia)
               </p>
               <p className="flex items-center gap-2 text-gray-700">
-                <i className="fa-solid fa-check text-green-500"></i>
+                <i className="fa-solid fa-check text-[#228B22]"></i>
                 Inclusion et accessibilité pour tous
               </p>
               <p className="flex items-center gap-2 text-gray-700">
-                <i className="fa-solid fa-check text-green-500"></i>
+                <i className="fa-solid fa-check text-[#228B22]"></i>
                 Innovation continue au service de la communauté
               </p>
             </div>
@@ -141,7 +141,7 @@ export default function History() {
                   <i className="fa-solid fa-user"></i>
                 </div>
                 <h3 className="font-bold text-lg text-gray-800 mb-1">{member.name}</h3>
-                <p className="text-sm text-green-600 font-semibold">{member.role}</p>
+                <p className="text-sm text-[#228B22] font-semibold">{member.role}</p>
               </div>
             ))}
           </div>

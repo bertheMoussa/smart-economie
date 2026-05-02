@@ -85,8 +85,8 @@ export function About() {
 
             <Card className="border hover:shadow-lg transition-shadow">
               <CardContent className="p-6 text-center">
-                <div className="size-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <TrendingDown className="size-8 text-green-600" />
+                <div className="size-16 bg-[#e8f5e9] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <TrendingDown className="size-8 text-[#228B22]" />
                 </div>
                 <h4 className="text-xl font-semibold text-gray-900 mb-2">Économie</h4>
                 <p className="text-gray-600 text-sm">
