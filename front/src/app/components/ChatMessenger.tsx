@@ -75,10 +75,26 @@ export default function ChatMessenger() {
       {/* Chat Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 bg-[#228B22] hover:bg-[#1a6b1a] text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-all z-40"
+        className="fixed bottom-6 right-6 bg-[#045c3f] hover:bg-[#044f36] text-white rounded-full px-5 py-4 shadow-2xl transition-all z-40 flex items-center gap-4 min-w-[260px]"
         aria-label="Ouvrir le chat"
       >
-        <i className="fa-solid fa-message text-2xl"></i>
+        {/* Icône bulle avec 3 points */}
+        <div className="w-11 h-11 flex items-center justify-center rounded-full bg-white shrink-0">
+          <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M4 6C4 4.89543 4.89543 4 6 4H18C19.1046 4 20 4.89543 20 6V14C20 15.1046 19.1046 16 18 16H13L9 20V16H6C4.89543 16 4 15.1046 4 14V6Z"
+              fill="#045c3f"
+            />
+            <circle cx="8.5" cy="10" r="1.2" fill="white"/>
+            <circle cx="12" cy="10" r="1.2" fill="white"/>
+            <circle cx="15.5" cy="10" r="1.2" fill="white"/>
+          </svg>
+        </div>
+
+        <div className="text-left">
+          <p className="font-semibold text-base leading-tight">Aide et contact</p>
+          <p className="text-sm text-white/80 leading-tight">Je réponds à vos questions</p>
+        </div>
       </button>
 
       {/* Chat Window */}

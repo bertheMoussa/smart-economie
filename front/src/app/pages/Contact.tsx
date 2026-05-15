@@ -1,114 +1,221 @@
+import { useState } from 'react';
+
+const faqs = [
+  {
+    q: 'Quel est le délai de réponse ?',
+    a: 'Nous traitons toutes les demandes sous 24 à 48 heures ouvrées. Pour les urgences, appelez directement notre ligne dédiée.',
+  },
+  {
+    q: 'Comment modifier mon adhésion ?',
+    a: 'Connectez-vous à votre espace membre et accédez à la section "Profil & paramètres" pour modifier vos informations ou changer de formule.',
+  },
+  {
+    q: 'Comment déclarer un sinistre ?',
+    a: 'Rendez-vous dans la section "Sinistres" de votre espace membre, ou appelez notre assistance 24/7 pour une prise en charge immédiate.',
+  },
+  {
+    q: 'Ce service est-il disponible le week-end ?',
+    a: 'Notre ligne téléphonique est ouverte du lundi au samedi de 9h à 19h. Par email, nous répondons 7j/7 dans un délai de 24h.',
+  },
+];
+
 export default function Contact() {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
   return (
-    <div className="bg-[#f0f4f8] min-h-screen py-12">
-      <div className="container mx-auto px-6 max-w-6xl">
-        <h1 className="text-4xl font-bold text-[#0a2342] mb-12 text-center">Nous Contacter</h1>
+    <div className="bg-white min-h-screen">
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-          {/* Contact Info Cards */}
-          <div className="bg-white rounded-2xl shadow-lg p-8 text-center">
-            <div className="text-6xl text-blue-500 mb-4 flex justify-center">
-              <i className="fa-solid fa-phone"></i>
-            </div>
-            <h3 className="text-xl font-bold text-gray-800 mb-2">Téléphone</h3>
-            <p className="text-gray-600 mb-2">+22 535 257 390</p>
-            <p className="text-sm text-gray-500">Lun-Sam: 9h-19h</p>
-          </div>
+      {/* ── Hero ─────────────────────────────────────────────────────── */}
+      <section className="bg-[#0a2342] py-14">
+        <div className="container mx-auto px-8 max-w-6xl">
+          <span className="inline-block text-xs font-bold uppercase tracking-widest text-[#228B22] bg-[#228B22]/15 px-4 py-1.5 rounded-full mb-5">
+            Support
+          </span>
+          <h1 className="text-4xl font-extrabold text-white mb-3 leading-tight">
+            Nous sommes là pour vous
+          </h1>
+          <p className="text-white/65 text-base max-w-xl leading-relaxed">
+            Une question sur votre adhésion, un sinistre à déclarer ou simplement besoin d'un conseil ?
+            Notre équipe vous répond rapidement.
+          </p>
+        </div>
+      </section>
 
-          <div className="bg-white rounded-2xl shadow-lg p-8 text-center">
-            <div className="text-6xl text-[#228B22] mb-4 flex justify-center">
-              <i className="fa-solid fa-envelope"></i>
-            </div>
-            <h3 className="text-xl font-bold text-gray-800 mb-2">Email</h3>
-            <p className="text-gray-600 mb-2">dizinn@ecumnnle.com</p>
-            <p className="text-sm text-gray-500">Réponse sous 24h</p>
-          </div>
-
-          <div className="bg-white rounded-2xl shadow-lg p-8 text-center">
-            <div className="text-6xl text-purple-500 mb-4 flex justify-center">
-              <i className="fa-solid fa-map-marker-alt"></i>
-            </div>
-            <h3 className="text-xl font-bold text-gray-800 mb-2">Bureau</h3>
-            <p className="text-gray-600 mb-2">Smart-Économie HQ</p>
-            <p className="text-sm text-gray-500">123 Rue, Ville</p>
+      {/* ── 3 cartes de contact ──────────────────────────────────────── */}
+      <section className="bg-[#f8fafc] py-10 border-b border-gray-100">
+        <div className="container mx-auto px-8 max-w-6xl">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                icon: 'fa-phone',
+                color: 'text-blue-600',
+                bg: 'bg-blue-50',
+                title: 'Téléphone',
+                main: '+22 535 257 390',
+                sub: 'Lun – Sam : 9h à 19h',
+              },
+              {
+                icon: 'fa-envelope',
+                color: 'text-[#228B22]',
+                bg: 'bg-green-50',
+                title: 'Email',
+                main: 'contact@smart-economie.com',
+                sub: 'Réponse sous 24h',
+              },
+              {
+                icon: 'fa-location-dot',
+                color: 'text-purple-600',
+                bg: 'bg-purple-50',
+                title: 'Bureau',
+                main: 'Smart-Économie HQ',
+                sub: '123 Rue de la Solidarité, Ville',
+              },
+            ].map((c) => (
+              <div key={c.title} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex items-start gap-4">
+                <div className={`w-12 h-12 rounded-xl ${c.bg} flex items-center justify-center shrink-0`}>
+                  <i className={`fa-solid ${c.icon} ${c.color} text-lg`}></i>
+                </div>
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-1">{c.title}</p>
+                  <p className="font-bold text-[#0a2342] text-sm mb-0.5">{c.main}</p>
+                  <p className="text-xs text-gray-400">{c.sub}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
+      </section>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* Form */}
-          <div className="bg-white rounded-2xl shadow-lg p-8">
-            <h2 className="text-2xl font-bold text-[#0a2342] mb-6">Envoyez-nous un message</h2>
+      {/* ── Formulaire + FAQ ─────────────────────────────────────────── */}
+      <section className="py-16">
+        <div className="container mx-auto px-8 max-w-6xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
 
-            <form className="space-y-4">
-              <input
-                type="text"
-                placeholder="Nom complet"
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#228B22]"
-              />
+            {/* Formulaire */}
+            <div>
+              <span className="text-xs font-bold uppercase tracking-widest text-[#228B22]">Message</span>
+              <h2 className="text-2xl font-extrabold text-[#0a2342] mt-1 mb-6">Envoyez-nous un message</h2>
 
-              <input
-                type="email"
-                placeholder="Adresse email"
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#228B22]"
-              />
+              <form className="space-y-4">
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-xs font-semibold text-gray-500 mb-1.5">Prénom</label>
+                    <input
+                      type="text"
+                      placeholder="Karim"
+                      className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#228B22]/40 focus:border-[#228B22] transition"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-semibold text-gray-500 mb-1.5">Nom</label>
+                    <input
+                      type="text"
+                      placeholder="Benali"
+                      className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#228B22]/40 focus:border-[#228B22] transition"
+                    />
+                  </div>
+                </div>
 
-              <input
-                type="tel"
-                placeholder="Téléphone"
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#228B22]"
-              />
+                <div>
+                  <label className="block text-xs font-semibold text-gray-500 mb-1.5">Email</label>
+                  <input
+                    type="email"
+                    placeholder="karim@exemple.com"
+                    className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#228B22]/40 focus:border-[#228B22] transition"
+                  />
+                </div>
 
-              <select className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#228B22]">
-                <option>Sujet du message</option>
-                <option>Question générale</option>
-                <option>Support technique</option>
-                <option>Réclamation</option>
-                <option>Autre</option>
-              </select>
+                <div>
+                  <label className="block text-xs font-semibold text-gray-500 mb-1.5">Téléphone</label>
+                  <input
+                    type="tel"
+                    placeholder="+33 6 00 00 00 00"
+                    className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#228B22]/40 focus:border-[#228B22] transition"
+                  />
+                </div>
 
-              <textarea
-                placeholder="Votre message"
-                rows={5}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#228B22]"
-              ></textarea>
+                <div>
+                  <label className="block text-xs font-semibold text-gray-500 mb-1.5">Sujet</label>
+                  <select className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#228B22]/40 focus:border-[#228B22] transition bg-white">
+                    <option value="">Choisissez un sujet</option>
+                    <option>Question générale</option>
+                    <option>Adhésion & formules</option>
+                    <option>Déclaration de sinistre</option>
+                    <option>Support technique</option>
+                    <option>Autre</option>
+                  </select>
+                </div>
 
-              <button
-                type="submit"
-                className="w-full bg-[#228B22] text-white font-bold py-3 rounded-lg hover:bg-[#1a6b1a] transition"
-              >
-                Envoyer le message
-              </button>
-            </form>
-          </div>
+                <div>
+                  <label className="block text-xs font-semibold text-gray-500 mb-1.5">Message</label>
+                  <textarea
+                    placeholder="Décrivez votre demande..."
+                    rows={5}
+                    className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#228B22]/40 focus:border-[#228B22] transition resize-none"
+                  />
+                </div>
 
-          {/* FAQ */}
-          <div className="bg-white rounded-2xl shadow-lg p-8">
-            <h2 className="text-2xl font-bold text-[#0a2342] mb-6">Questions Fréquentes</h2>
+                <button
+                  type="submit"
+                  className="w-full bg-[#228B22] text-white font-bold py-3 rounded-xl hover:bg-[#1a6b1a] transition flex items-center justify-center gap-2 text-sm"
+                >
+                  <i className="fa-solid fa-paper-plane"></i>
+                  Envoyer le message
+                </button>
+              </form>
+            </div>
 
-            <div className="space-y-4">
-              <div className="border-l-4 border-[#228B22] pl-4">
-                <h3 className="font-bold text-gray-800 mb-1">Quel est le délai de traitement?</h3>
-                <p className="text-sm text-gray-600">Nous traitons les demandes sous 24-48 heures</p>
+            {/* FAQ */}
+            <div>
+              <span className="text-xs font-bold uppercase tracking-widest text-[#228B22]">FAQ</span>
+              <h2 className="text-2xl font-extrabold text-[#0a2342] mt-1 mb-6">Questions fréquentes</h2>
+
+              <div className="space-y-3">
+                {faqs.map((faq, i) => (
+                  <div key={i} className="border border-gray-100 rounded-2xl overflow-hidden shadow-sm">
+                    <button
+                      onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                      className="w-full flex items-center justify-between gap-4 px-5 py-4 text-left hover:bg-gray-50 transition"
+                    >
+                      <span className="font-semibold text-[#0a2342] text-sm">{faq.q}</span>
+                      <i className={`fa-solid fa-chevron-down text-gray-400 text-xs transition-transform duration-200 shrink-0 ${openFaq === i ? 'rotate-180' : ''}`}></i>
+                    </button>
+                    {openFaq === i && (
+                      <div className="px-5 pb-4 text-sm text-gray-500 leading-relaxed border-t border-gray-100 pt-3">
+                        {faq.a}
+                      </div>
+                    )}
+                  </div>
+                ))}
               </div>
 
-              <div className="border-l-4 border-[#228B22] pl-4">
-                <h3 className="font-bold text-gray-800 mb-1">Comment modifier ma souscription?</h3>
-                <p className="text-sm text-gray-600">Accédez à votre espace personnel pour modifier vos informations</p>
-              </div>
-
-              <div className="border-l-4 border-[#228B22] pl-4">
-                <h3 className="font-bold text-gray-800 mb-1">Puis-je résilier mon contrat?</h3>
-                <p className="text-sm text-gray-600">Oui, avec un préavis de 30 jours via votre espace personnel</p>
-              </div>
-
-              <div className="border-l-4 border-[#228B22] pl-4">
-                <h3 className="font-bold text-gray-800 mb-1">Comment accéder à la cagnotte communautaire?</h3>
-                <p className="text-sm text-gray-600">Les membres du Plan Avantages et Premium y ont accès</p>
+              {/* Bloc horaires */}
+              <div className="mt-8 bg-[#f8fafc] rounded-2xl border border-gray-100 p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-9 h-9 rounded-lg bg-[#228B22]/10 flex items-center justify-center">
+                    <i className="fa-solid fa-clock text-[#228B22] text-sm"></i>
+                  </div>
+                  <h3 className="font-bold text-[#0a2342] text-sm">Horaires d'ouverture</h3>
+                </div>
+                <div className="space-y-2 text-sm">
+                  {[
+                    { j: 'Lundi – Vendredi', h: '9h00 – 19h00' },
+                    { j: 'Samedi',            h: '9h00 – 13h00' },
+                    { j: 'Dimanche',          h: 'Fermé' },
+                  ].map((row) => (
+                    <div key={row.j} className="flex justify-between">
+                      <span className="text-gray-500">{row.j}</span>
+                      <span className={`font-semibold ${row.h === 'Fermé' ? 'text-red-500' : 'text-[#0a2342]'}`}>{row.h}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
+
           </div>
         </div>
-      </div>
+      </section>
+
     </div>
   );
 }

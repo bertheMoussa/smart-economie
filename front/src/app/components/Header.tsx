@@ -2,12 +2,15 @@ import { Button } from "./ui/button";
 import { Shield, Menu, X } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { DevisModal } from "./DevisModal";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isDevisOpen, setIsDevisOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const lastScrollY = useRef(0);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -70,9 +73,30 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            <a href="#accueil" className="text-gray-700 hover:text-blue-600 transition-colors">
-              Accueil
-            </a>
+            {/* Onglets Profil */}
+            <div className="flex items-center gap-2 bg-gray-100 rounded-full p-1">
+              <button
+                onClick={() => navigate('/')}
+                className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all ${
+                  location.pathname === '/' 
+                    ? 'bg-white text-[#228B22] shadow-sm' 
+                    : 'text-gray-600 hover:text-gray-900'
+                }`}
+              >
+                Particuliers
+              </button>
+              <button
+                onClick={() => navigate('/entreprise')}
+                className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all ${
+                  location.pathname === '/entreprise' 
+                    ? 'bg-white text-[#228B22] shadow-sm' 
+                    : 'text-gray-600 hover:text-gray-900'
+                }`}
+              >
+                Entreprises
+              </button>
+            </div>
+            
             <a href="#apropos" className="text-gray-700 hover:text-blue-600 transition-colors">
               À propos
             </a>
@@ -104,9 +128,36 @@ export function Header() {
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <nav className="md:hidden mt-4 pb-4 flex flex-col gap-4">
-            <a href="#accueil" className="text-gray-700 hover:text-blue-600 transition-colors py-2" onClick={() => setMobileMenuOpen(false)}>
-              Accueil
-            </a>
+            {/* Onglets Profil Mobile */}
+            <div className="flex flex-col gap-2 pb-2 border-b border-gray-200">
+              <button
+                onClick={() => {
+                  navigate('/');
+                  setMobileMenuOpen(false);
+                }}
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                  location.pathname === '/' 
+                    ? 'bg-[#228B22] text-white' 
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                }`}
+              >
+                Particuliers
+              </button>
+              <button
+                onClick={() => {
+                  navigate('/entreprise');
+                  setMobileMenuOpen(false);
+                }}
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                  location.pathname === '/entreprise' 
+                    ? 'bg-[#228B22] text-white' 
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                }`}
+              >
+                Entreprises
+              </button>
+            </div>
+            
             <a href="#apropos" className="text-gray-700 hover:text-blue-600 transition-colors py-2" onClick={() => setMobileMenuOpen(false)}>
               À propos
             </a>

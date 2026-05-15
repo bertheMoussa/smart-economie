@@ -1,4 +1,5 @@
 export { default as Home } from './Home';
+export { default as HomeEntreprise } from './HomeEntreprise';
 export { default as About } from './About';
 export { default as Subscription } from './Subscription';
 export { default as Claims } from './Claims';

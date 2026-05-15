@@ -5,8 +5,10 @@ import ChatMessenger from './components/ChatMessenger';
 import { ProtectedRoute } from './components/ProtectedRoute';
 import { AuthProvider } from './context/AuthContext';
 import Home from './pages/Home';
+import HomeEntreprise from './pages/HomeEntreprise';
 import About from './pages/About';
 import Subscription from './pages/Subscription';
+import Claims from './pages/Claims';
 import Contact from './pages/Contact';
 import History from './pages/History';
 import Login from './pages/Login';
@@ -26,8 +28,10 @@ function AppContent() {
         <Routes>
           {/* Public Routes */}
           <Route path="/" element={<Home />} />
+          <Route path="/entreprise" element={<HomeEntreprise />} />
           <Route path="/about" element={<About />} />
           <Route path="/subscription" element={<Subscription />} />
+          <Route path="/claims" element={<Claims />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/history" element={<History />} />
 

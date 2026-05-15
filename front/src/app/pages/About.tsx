@@ -1,224 +1,230 @@
+import { Link } from 'react-router-dom';
+
 export default function About() {
   return (
-    <div className="bg-[#f0f4f8] min-h-screen py-12">
-      <div className="container mx-auto px-6 max-w-6xl">
-        {/* Header Section */}
-        <div className="mb-16">
-          <h1 className="text-5xl font-bold text-[#0a2342] mb-8 text-center">À-Propos de Smart-Économie</h1>
-          <p className="text-center text-lg text-gray-600 max-w-3xl mx-auto">
-            Une plateforme d'assurance innovante, éthique et transparente mettant la communauté au cœur de ses décisions
+    <div className="bg-white min-h-screen">
+
+      {/* ── Hero ─────────────────────────────────────────────────────── */}
+      <section className="bg-[#0a2342] py-20">
+        <div className="container mx-auto px-8 max-w-6xl text-center">
+          <span className="inline-block text-xs font-bold uppercase tracking-widest text-[#228B22] mb-4">
+            Qui sommes-nous
+          </span>
+          <h1 className="text-5xl font-extrabold text-white mb-6 leading-tight">
+            À propos de Smart-Économie
+          </h1>
+          <p className="text-white/60 text-lg max-w-2xl mx-auto leading-relaxed">
+            Une assurance solidaire innovante, éthique et transparente — sans cotisation mensuelle,
+            entièrement basée sur l'entraide entre membres.
           </p>
         </div>
+      </section>
 
-        {/* Mission & Values */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          <div className="bg-white rounded-2xl shadow-lg p-8">
-            <h2 className="text-2xl font-bold text-[#0a2342] mb-4 flex items-center gap-2">
-              <i className="fa-solid fa-target text-[#228B22]"></i>
-              Notre Mission
-            </h2>
-            <p className="text-gray-700 leading-relaxed mb-4">
-              Smart-Économie est une plateforme d'assurance innovante dédiée à offrir une protection éthique et
-              transparente pour tous.
-            </p>
-            <p className="text-gray-700 leading-relaxed">
-              Nous croyons que l'assurance doit être accessible, juste et respectueuse des valeurs islamiques. Notre
-              objectif est de révolutionner le secteur en mettant la communauté au cœur de nos décisions.
-            </p>
-          </div>
-
-          <div className="bg-gradient-to-br from-blue-50 to-green-50 rounded-2xl shadow-lg p-8 border-l-4 border-[#228B22]">
-            <h3 className="text-2xl font-bold text-[#0a2342] mb-6 flex items-center gap-2">
-              <i className="fa-solid fa-heart text-red-500"></i>
-              Nos Valeurs
-            </h3>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <span className="text-[#228B22] font-bold text-lg">✓</span>
-                <div>
-                  <span className="font-bold text-gray-800">Transparence totale</span>
-                  <p className="text-sm text-gray-600">Aucun intérêt perçu, redistribution des excédents</p>
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-[#228B22] font-bold text-lg">✓</span>
-                <div>
-                  <span className="font-bold text-gray-800">Conformité Sharia</span>
-                  <p className="text-sm text-gray-600">Respecte les principes islamiques</p>
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-[#228B22] font-bold text-lg">✓</span>
-                <div>
-                  <span className="font-bold text-gray-800">Communauté solidaire</span>
-                  <p className="text-sm text-gray-600">Entraide et support mutuel</p>
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-[#228B22] font-bold text-lg">✓</span>
-                <div>
-                  <span className="font-bold text-gray-800">Équité pour tous</span>
-                  <p className="text-sm text-gray-600">Égalité d'accès et de traitement</p>
-                </div>
-              </li>
-            </ul>
+      {/* ── Chiffres clés ────────────────────────────────────────────── */}
+      <section className="bg-white border-b border-gray-100">
+        <div className="container mx-auto px-8 max-w-6xl">
+          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-gray-100">
+            {[
+              { value: '0 DH', label: 'Cotisation mensuelle', icon: 'fa-ban', color: 'text-[#228B22]' },
+              { value: '+2 000', label: 'Membres actifs', icon: 'fa-users', color: 'text-blue-500' },
+              { value: '100 %', label: 'Sharia-compliant', icon: 'fa-mosque', color: 'text-[#228B22]' },
+              { value: '< 48 h', label: 'Traitement sinistres', icon: 'fa-clock', color: 'text-purple-500' },
+            ].map((s) => (
+              <div key={s.label} className="flex flex-col items-center gap-2 py-10 px-6">
+                <i className={`fa-solid ${s.icon} ${s.color} text-2xl`}></i>
+                <span className="text-3xl font-extrabold text-[#0a2342]">{s.value}</span>
+                <span className="text-xs text-gray-400 uppercase tracking-wider text-center">{s.label}</span>
+              </div>
+            ))}
           </div>
         </div>
+      </section>
 
-        {/* Key Features */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold text-[#0a2342] mb-4 text-center">Nos Fonctionnalités Principales</h2>
-          <p className="text-center text-gray-600 mb-10">Découvrez ce qui rend Smart-Économie unique</p>
+      {/* ── Mission ──────────────────────────────────────────────────── */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-8 max-w-6xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            {/* Texte */}
+            <div>
+              <span className="text-xs font-bold uppercase tracking-widest text-[#228B22]">Notre mission</span>
+              <h2 className="text-4xl font-extrabold text-[#0a2342] mt-2 mb-6">
+                Une assurance pensée
+                <br />pour la communauté
+              </h2>
+              <p className="text-gray-500 text-base leading-relaxed mb-5">
+                Smart-Économie est une assurance sociale solidaire : vous adhérez, vous êtes couvert.
+                Il n'existe <strong className="text-[#0a2342]">aucune cotisation mensuelle fixe</strong>.
+                Les membres ne contribuent qu'en cas de sinistre, dans le respect du principe d'entraide mutuelle.
+              </p>
+              <p className="text-gray-500 text-base leading-relaxed">
+                Notre modèle <strong className="text-[#0a2342]">Takaful</strong> place la solidarité
+                de la communauté au cœur de chaque protection — accessible, juste et respectueux
+                des valeurs islamiques.
+              </p>
+            </div>
+
+            {/* Bloc citation */}
+            <div className="bg-[#f8fafc] rounded-2xl border border-gray-100 p-10">
+              <i className="fa-solid fa-quote-left text-[#228B22] text-3xl mb-6 block"></i>
+              <p className="text-[#0a2342] text-xl font-semibold leading-relaxed mb-6">
+                "Nous croyons que l'assurance doit être accessible, juste et fondée sur la solidarité réelle entre les personnes."
+              </p>
+              <div className="flex items-center gap-4 pt-4 border-t border-gray-200">
+                <div className="w-10 h-10 rounded-full bg-[#228B22] flex items-center justify-center">
+                  <i className="fa-solid fa-user text-white text-sm"></i>
+                </div>
+                <div>
+                  <p className="font-bold text-[#0a2342] text-sm">L'équipe Smart-Économie</p>
+                  <p className="text-xs text-gray-400">Fondateurs & Membres</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Nos Valeurs ──────────────────────────────────────────────── */}
+      <section className="py-20 bg-[#f8fafc]">
+        <div className="container mx-auto px-8 max-w-6xl">
+          <div className="text-center mb-14">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#228B22]">Ce qui nous définit</span>
+            <h2 className="text-4xl font-extrabold text-[#0a2342] mt-2">Nos Valeurs</h2>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Feature 1 */}
-            <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition p-6 border-t-4 border-[#228B22]\">
-              <div className="flex items-start gap-4 mb-4">
-                <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-16 w-16 rounded-lg bg-[#228B22] text-white text-2xl\">
-                    <i className="fa-solid fa-flash"></i>
-                  </div>
+            {[
+              {
+                icon: 'fa-ban',
+                color: 'bg-green-50',
+                iconColor: 'text-[#228B22]',
+                border: 'border-green-200',
+                title: 'Zéro cotisation mensuelle',
+                desc: 'Vous ne contribuez qu\'en cas de sinistre réel. Aucun prélèvement automatique, aucun frais fixe mensuel imposé.',
+              },
+              {
+                icon: 'fa-mosque',
+                color: 'bg-blue-50',
+                iconColor: 'text-blue-600',
+                border: 'border-blue-200',
+                title: 'Conformité Sharia — Takaful',
+                desc: 'Ni intérêt, ni spéculation. Chaque opération respecte strictement les principes de la finance islamique.',
+              },
+              {
+                icon: 'fa-scale-balanced',
+                color: 'bg-amber-50',
+                iconColor: 'text-amber-500',
+                border: 'border-amber-200',
+                title: 'Transparence totale',
+                desc: 'Chaque contribution est directement liée à un sinistre justifié et traçable. Vous savez toujours où va votre argent.',
+              },
+              {
+                icon: 'fa-users',
+                color: 'bg-purple-50',
+                iconColor: 'text-purple-500',
+                border: 'border-purple-200',
+                title: 'Équité pour tous',
+                desc: 'Accès égal à la protection pour tous les membres, quelle que soit leur situation financière.',
+              },
+            ].map((v) => (
+              <div
+                key={v.title}
+                className={`bg-white rounded-2xl border ${v.border} p-8 flex items-start gap-6 shadow-sm hover:shadow-md transition-shadow`}
+              >
+                <div className={`w-14 h-14 rounded-2xl ${v.color} flex items-center justify-center shrink-0`}>
+                  <i className={`fa-solid ${v.icon} ${v.iconColor} text-2xl`}></i>
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-[#0a2342]">Souscription Rapide</h3>
+                  <h3 className="text-lg font-bold text-[#0a2342] mb-2">{v.title}</h3>
+                  <p className="text-gray-400 text-sm leading-relaxed">{v.desc}</p>
                 </div>
               </div>
-              <p className="text-gray-600 text-sm">
-                Simulation de devis, création de compte et signature électronique en 5 minutes.
-              </p>
-            </div>
-
-            {/* Feature 2 */}
-            <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition p-6 border-t-4 border-blue-500">
-              <div className="flex items-start gap-4 mb-4">
-                <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-16 w-16 rounded-lg bg-blue-500 text-white text-2xl">
-                    <i className="fa-solid fa-users"></i>
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-[#0a2342]">Cagnotte Communautaire</h3>
-                </div>
-              </div>
-              <p className="text-gray-600 text-sm">
-                Inspirée de CotiZup : créer ou rejoindre une cagnotte d'entraide pour frais juridiques et solidarité.
-              </p>
-            </div>
-
-            {/* Feature 3 */}
-            <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition p-6 border-t-4 border-purple-500">
-              <div className="flex items-start gap-4 mb-4">
-                <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-16 w-16 rounded-lg bg-purple-500 text-white text-2xl">
-                    <i className="fa-solid fa-wallet"></i>
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-[#0a2342]">Paiement Participatif</h3>
-                </div>
-              </div>
-              <p className="text-gray-600 text-sm">
-                Cotisations mensuelles ou ponctuelles via carte, virement ou wallet islamique.
-              </p>
-            </div>
-
-            {/* Feature 4 */}
-            <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition p-6 border-t-4 border-orange-500">
-              <div className="flex items-start gap-4 mb-4">
-                <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-16 w-16 rounded-lg bg-orange-500 text-white text-2xl">
-                    <i className="fa-solid fa-file-contract"></i>
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-[#0a2342]">Gestion des Sinistres</h3>
-                </div>
-              </div>
-              <p className="text-gray-600 text-sm">
-                Déclaration simplifiée via app, suivi de l'indemnisation, photos et justificatifs.
-              </p>
-            </div>
-
-            {/* Feature 5 */}
-            <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition p-6 border-t-4 border-indigo-500">
-              <div className="flex items-start gap-4 mb-4">
-                <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-16 w-16 rounded-lg bg-indigo-500 text-white text-2xl">
-                    <i className="fa-solid fa-user-shield"></i>
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-[#0a2342]">Espace Personnel</h3>
-                </div>
-              </div>
-              <p className="text-gray-600 text-sm">
-                Contrats, documents, cagnotte, historique, messagerie centralisée et sécurisée.
-              </p>
-            </div>
-
-            {/* Feature 6 */}
-            <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition p-6 border-t-4 border-cyan-500">
-              <div className="flex items-start gap-4 mb-4">
-                <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-16 w-16 rounded-lg bg-cyan-500 text-white text-2xl">
-                    <i className="fa-solid fa-globe"></i>
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-[#0a2342]">Multilingue</h3>
-                </div>
-              </div>
-              <p className="text-gray-600 text-sm">
-                Interface disponible en Français, Anglais et Arabe pour tous nos utilisateurs.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
+      </section>
 
-        {/* How It Works */}
-        <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl shadow-lg p-12 border-l-4 border-[#228B22]\">
-          <h2 className="text-3xl font-bold text-[#0a2342] mb-4">Comment Ça Fonctionne</h2>
-          <p className="text-gray-600 mb-10">Trois étapes simples pour rejoindre notre communauté</p>
+      {/* ── Comment Ça Fonctionne ────────────────────────────────────── */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-8 max-w-6xl">
+          <div className="text-center mb-14">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#228B22]">Le principe</span>
+            <h2 className="text-4xl font-extrabold text-[#0a2342] mt-2">Comment Ça Fonctionne</h2>
+            <p className="text-gray-400 mt-3 text-lg">Trois étapes simples pour rejoindre notre communauté</p>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="mb-4 flex justify-center">
-                <div className="w-16 h-16 rounded-full bg-[#228B22] text-white flex items-center justify-center text-2xl font-bold shadow-lg">
-                  1
+            {[
+              {
+                step: '01',
+                icon: 'fa-user-plus',
+                title: 'Inscription',
+                desc: 'Créez votre compte en 2 minutes avec vos informations de base. Accès immédiat à votre espace membre.',
+              },
+              {
+                step: '02',
+                icon: 'fa-shield-halved',
+                title: 'Adhésion',
+                desc: 'Choisissez votre formule de couverture et rejoignez la communauté. Sans cotisation mensuelle.',
+              },
+              {
+                step: '03',
+                icon: 'fa-handshake-angle',
+                title: 'Protection & Solidarité',
+                desc: 'Vous êtes couvert dès le premier jour. En cas de sinistre, la communauté se mobilise pour vous.',
+              },
+            ].map((item, idx) => (
+              <div key={item.step} className="relative">
+                {/* Connecteur horizontal */}
+                {idx < 2 && (
+                  <div className="hidden md:block absolute top-7 left-full w-full h-px bg-gray-200 z-0" style={{ width: 'calc(100% - 3rem)', left: 'calc(50% + 2rem)' }}></div>
+                )}
+                <div className="relative bg-white border border-gray-100 rounded-2xl p-8 shadow-sm text-center">
+                  <span className="inline-block text-xs font-bold text-[#228B22] bg-green-50 px-3 py-1 rounded-full mb-5">
+                    Étape {item.step}
+                  </span>
+                  <div className="w-16 h-16 rounded-2xl bg-[#0a2342] flex items-center justify-center mx-auto mb-5">
+                    <i className={`fa-solid ${item.icon} text-white text-2xl`}></i>
+                  </div>
+                  <h3 className="text-lg font-bold text-[#0a2342] mb-3">{item.title}</h3>
+                  <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
                 </div>
               </div>
-              <h3 className="text-lg font-bold text-[#0a2342] mb-2">Inscription</h3>
-              <p className="text-sm text-gray-600">
-                Créez votre compte en 2 minutes avec vos informations de base.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="mb-4 flex justify-center">
-                <div className="w-16 h-16 rounded-full bg-[#228B22] text-white flex items-center justify-center text-2xl font-bold shadow-lg">
-                  2
-                </div>
-              </div>
-              <h3 className="text-lg font-bold text-[#0a2342] mb-2">Souscription</h3>
-              <p className="text-sm text-gray-600">
-                Choisissez votre plan et complétez votre cotisation.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="mb-4 flex justify-center">
-                <div className="w-16 h-16 rounded-full bg-[#228B22] text-white flex items-center justify-center text-2xl font-bold shadow-lg">
-                  3
-                </div>
-              </div>
-              <h3 className="text-lg font-bold text-[#0a2342] mb-2">Protection</h3>
-              <p className="text-sm text-gray-600">
-                Vous êtes assuré et protégé dès le premier jour.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* ── CTA ──────────────────────────────────────────────────────── */}
+      <section className="py-20 bg-[#f8fafc] border-t border-gray-100">
+        <div className="container mx-auto px-8 max-w-3xl text-center">
+          <span className="text-xs font-bold uppercase tracking-widest text-[#228B22] mb-4 block">
+            Rejoignez-nous
+          </span>
+          <h2 className="text-4xl font-extrabold text-[#0a2342] mb-4">
+            Prêt à faire partie de la communauté ?
+          </h2>
+          <p className="text-gray-400 text-lg mb-10 leading-relaxed">
+            Adhérez dès aujourd'hui et bénéficiez d'une couverture immédiate, sans aucune cotisation mensuelle.
+          </p>
+          <div className="flex items-center justify-center gap-4 flex-wrap">
+            <Link
+              to="/subscription"
+              className="inline-flex items-center gap-2 bg-[#228B22] text-white px-10 py-4 rounded-full font-bold hover:bg-[#1a6b1a] transition-all shadow-lg text-base"
+            >
+              Adhérer maintenant
+              <i className="fa-solid fa-arrow-right"></i>
+            </Link>
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 border-2 border-[#0a2342] text-[#0a2342] px-10 py-4 rounded-full font-bold hover:bg-[#0a2342] hover:text-white transition-all text-base"
+            >
+              <i className="fa-solid fa-envelope"></i>
+              Nous contacter
+            </Link>
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 }

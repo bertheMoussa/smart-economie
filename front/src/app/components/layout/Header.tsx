@@ -1,11 +1,13 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
 import { useState, useEffect } from 'react';
 
 export default function Header() {
   const location = useLocation();
+  const navigate = useNavigate();
   const { isAuthenticated, user, logout } = useAuth();
   const [scrolled, setScrolled] = useState(false);
+  const [showEmergencyMenu, setShowEmergencyMenu] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,6 +16,17 @@ export default function Header() {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (showEmergencyMenu && !target.closest('.emergency-menu-container')) {
+        setShowEmergencyMenu(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [showEmergencyMenu]);
 
   const navItems = [
     { label: 'Accueil', path: '/' },
@@ -36,17 +49,62 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white shadow-sm relative z-10 w-full sticky top-0 transition-all duration-300">
+    <header className="bg-white shadow-sm relative z-50 w-full sticky top-0 transition-all duration-300">
       <div className="container mx-auto px-1 max-w-6xl">
         {/* Top Header: Logo & Actions — se cache au scroll */}
         <div
-          className={`overflow-hidden transition-all duration-300 ${
-            scrolled ? 'max-h-0 opacity-0 py-0 mb-0' : 'max-h-32 opacity-100 py-2 mb-6'
-          }`}
+          className={`transition-all duration-300 ${
+            scrolled ? 'max-h-0 opacity-0 py-0 mb-0 overflow-hidden' : 'max-h-32 opacity-100 py-2 mb-6'
+          } ${showEmergencyMenu ? 'overflow-visible' : 'overflow-hidden'}`}
         >
           <div className="flex justify-between items-center">
-            {/* Spacer for centering logo */}
-            <div className="w-1/3"></div>
+            {/* Bouton Urgence à gauche */}
+            <div className="w-1/3 flex flex-col items-start gap-3">
+              <div className="relative emergency-menu-container">
+                <button
+                  onClick={() => setShowEmergencyMenu(!showEmergencyMenu)}
+                  className="bg-[#F0B13B] text-white px-5 py-2 rounded-full text-sm font-bold hover:bg-[#e6a534] transition shadow-lg flex items-center gap-2 animate-pulse"
+                >
+                  <i className="fa-solid fa-phone-volume"></i>
+                  URGENCE
+                </button>
+                
+                {/* Menu déroulant */}
+                {showEmergencyMenu && (
+                  <div className="absolute left-0 top-full mt-2 bg-white rounded-lg shadow-xl border border-gray-200 py-2 w-64 z-[9999]">
+                    <div className="px-4 py-2 border-b border-gray-100">
+                      <p className="text-xs font-bold text-gray-600 uppercase">Contactez-nous</p>
+                    </div>
+                    
+                    <a
+                      href="tel:+212600000000"
+                      className="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition"
+                    >
+                      <div className="w-10 h-10 rounded-full bg-[#228B22] flex items-center justify-center">
+                        <i className="fa-solid fa-phone text-white"></i>
+                      </div>
+                      <div>
+                        <p className="text-sm font-bold text-gray-800">Appeler</p>
+                        <p className="text-xs text-gray-500">+212 6 00 00 00 00</p>
+                      </div>
+                    </a>
+                    
+                    <a
+                      href="mailto:urgence@smart-economie.ma"
+                      className="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition"
+                    >
+                      <div className="w-10 h-10 rounded-full bg-[#0a2342] flex items-center justify-center">
+                        <i className="fa-solid fa-envelope text-white"></i>
+                      </div>
+                      <div>
+                        <p className="text-sm font-bold text-gray-800">Email</p>
+                        <p className="text-xs text-gray-500">urgence@smart-economie.ma</p>
+                      </div>
+                    </a>
+                  </div>
+                )}
+              </div>
+            </div>
 
           {/* Logo */}
           <Link to="/" className="w-1/3 flex flex-col items-center hover:opacity-80 transition">
@@ -67,6 +125,8 @@ export default function Header() {
               <span className="text-red-600">FR</span> | <span className="text-gray-500">EN</span> |{' '}
               <span className="text-gray-500">AR</span>
             </div>
+            
+            {/* Bouton Espace personnel / Connexion */}
             {isAuthenticated ? (
               <div className="flex items-center gap-3">
                 <Link
@@ -93,6 +153,34 @@ export default function Header() {
             )}
           </div>
         </div>
+        </div>
+
+        {/* Onglets Particuliers / Entreprises */}
+        <div className="flex justify-center mb-4">
+          <div className="inline-flex items-center gap-2 bg-gray-100 rounded-full p-1.5">
+            <button
+              onClick={() => navigate('/')}
+              className={`px-6 py-2 rounded-full text-sm font-semibold transition-all ${
+                location.pathname === '/' 
+                  ? 'bg-white text-[#228B22] shadow-md' 
+                  : 'text-gray-600 hover:text-gray-900'
+              }`}
+            >
+              <i className="fa-solid fa-user mr-2"></i>
+              Particuliers
+            </button>
+            <button
+              onClick={() => navigate('/entreprise')}
+              className={`px-6 py-2 rounded-full text-sm font-semibold transition-all ${
+                location.pathname === '/entreprise' 
+                  ? 'bg-white text-[#228B22] shadow-md' 
+                  : 'text-gray-600 hover:text-gray-900'
+              }`}
+            >
+              <i className="fa-solid fa-building mr-2"></i>
+              Entreprises
+            </button>
+          </div>
         </div>
 
         {/* Navigation — toujours visible */}
