@@ -25,10 +25,10 @@ export default function About() {
         <div className="container mx-auto px-8 max-w-6xl">
           <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-gray-100">
             {[
-              { value: '0 DH', label: 'Cotisation mensuelle', icon: 'fa-ban', color: 'text-[#228B22]' },
-              { value: '+2 000', label: 'Membres actifs', icon: 'fa-users', color: 'text-blue-500' },
-              { value: '100 %', label: 'Sharia-compliant', icon: 'fa-mosque', color: 'text-[#228B22]' },
-              { value: '< 48 h', label: 'Traitement sinistres', icon: 'fa-clock', color: 'text-purple-500' },
+              { value: '0 DH',   label: 'Cotisation mensuelle', icon: 'fa-ban',    color: 'text-[#0a2342]' },
+              { value: '+2 000', label: 'Membres actifs',       icon: 'fa-users',  color: 'text-[#0a2342]' },
+              { value: '100 %', label: 'Finance éthique',        icon: 'fa-mosque', color: 'text-[#0a2342]' },
+              { value: '< 48 h', label: 'Traitement sinistres', icon: 'fa-clock',  color: 'text-[#0a2342]' },
             ].map((s) => (
               <div key={s.label} className="flex flex-col items-center gap-2 py-10 px-6">
                 <i className={`fa-solid ${s.icon} ${s.color} text-2xl`}></i>
@@ -44,7 +44,6 @@ export default function About() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-8 max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            {/* Texte */}
             <div>
               <span className="text-xs font-bold uppercase tracking-widest text-[#228B22]">Notre mission</span>
               <h2 className="text-4xl font-extrabold text-[#0a2342] mt-2 mb-6">
@@ -57,13 +56,12 @@ export default function About() {
                 Les membres ne contribuent qu'en cas de sinistre, dans le respect du principe d'entraide mutuelle.
               </p>
               <p className="text-gray-500 text-base leading-relaxed">
-                Notre modèle <strong className="text-[#0a2342]">Takaful</strong> place la solidarité
+                Notre modèle <strong className="text-[#0a2342]">solidaire</strong> place la solidarité
                 de la communauté au cœur de chaque protection — accessible, juste et respectueux
                 des valeurs islamiques.
               </p>
             </div>
 
-            {/* Bloc citation */}
             <div className="bg-[#f8fafc] rounded-2xl border border-gray-100 p-10">
               <i className="fa-solid fa-quote-left text-[#228B22] text-3xl mb-6 block"></i>
               <p className="text-[#0a2342] text-xl font-semibold leading-relaxed mb-6">
@@ -95,43 +93,31 @@ export default function About() {
             {[
               {
                 icon: 'fa-ban',
-                color: 'bg-green-50',
-                iconColor: 'text-[#228B22]',
-                border: 'border-green-200',
                 title: 'Zéro cotisation mensuelle',
-                desc: 'Vous ne contribuez qu\'en cas de sinistre réel. Aucun prélèvement automatique, aucun frais fixe mensuel imposé.',
+                desc: "Vous ne contribuez qu'en cas de sinistre réel. Aucun prélèvement automatique, aucun frais fixe mensuel imposé.",
               },
               {
                 icon: 'fa-mosque',
-                color: 'bg-blue-50',
-                iconColor: 'text-blue-600',
-                border: 'border-blue-200',
-                title: 'Conformité Sharia — Takaful',
+                title: 'Finance éthique & responsable',
                 desc: 'Ni intérêt, ni spéculation. Chaque opération respecte strictement les principes de la finance islamique.',
               },
               {
                 icon: 'fa-scale-balanced',
-                color: 'bg-amber-50',
-                iconColor: 'text-amber-500',
-                border: 'border-amber-200',
                 title: 'Transparence totale',
-                desc: 'Chaque contribution est directement liée à un sinistre justifié et traçable. Vous savez toujours où va votre argent.',
+                desc: "Chaque contribution est directement liée à un sinistre justifié et traçable. Vous savez toujours où va votre argent.",
               },
               {
                 icon: 'fa-users',
-                color: 'bg-purple-50',
-                iconColor: 'text-purple-500',
-                border: 'border-purple-200',
                 title: 'Équité pour tous',
                 desc: 'Accès égal à la protection pour tous les membres, quelle que soit leur situation financière.',
               },
             ].map((v) => (
               <div
                 key={v.title}
-                className={`bg-white rounded-2xl border ${v.border} p-8 flex items-start gap-6 shadow-sm hover:shadow-md transition-shadow`}
+                className="bg-white rounded-2xl border border-gray-100 p-8 flex items-start gap-6 shadow-sm hover:shadow-md transition-shadow"
               >
-                <div className={`w-14 h-14 rounded-2xl ${v.color} flex items-center justify-center shrink-0`}>
-                  <i className={`fa-solid ${v.icon} ${v.iconColor} text-2xl`}></i>
+                <div className="w-14 h-14 rounded-2xl bg-[#0a2342] flex items-center justify-center shrink-0">
+                  <i className={`fa-solid ${v.icon} text-white text-2xl`}></i>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-[#0a2342] mb-2">{v.title}</h3>
@@ -174,7 +160,6 @@ export default function About() {
               },
             ].map((item, idx) => (
               <div key={item.step} className="relative">
-                {/* Connecteur horizontal */}
                 {idx < 2 && (
                   <div className="hidden md:block absolute top-7 left-full w-full h-px bg-gray-200 z-0" style={{ width: 'calc(100% - 3rem)', left: 'calc(50% + 2rem)' }}></div>
                 )}

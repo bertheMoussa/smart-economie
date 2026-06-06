@@ -46,34 +46,13 @@ export default function Contact() {
         <div className="container mx-auto px-8 max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              {
-                icon: 'fa-phone',
-                color: 'text-blue-600',
-                bg: 'bg-blue-50',
-                title: 'Téléphone',
-                main: '+22 535 257 390',
-                sub: 'Lun – Sam : 9h à 19h',
-              },
-              {
-                icon: 'fa-envelope',
-                color: 'text-[#228B22]',
-                bg: 'bg-green-50',
-                title: 'Email',
-                main: 'contact@smart-economie.com',
-                sub: 'Réponse sous 24h',
-              },
-              {
-                icon: 'fa-location-dot',
-                color: 'text-purple-600',
-                bg: 'bg-purple-50',
-                title: 'Bureau',
-                main: 'Smart-Économie HQ',
-                sub: '123 Rue de la Solidarité, Ville',
-              },
+              { icon: 'fa-phone',        title: 'Téléphone', main: '+22 535 257 390',            sub: 'Lun – Sam : 9h à 19h' },
+              { icon: 'fa-envelope',     title: 'Email',     main: 'contact@smart-economie.com', sub: 'Réponse sous 24h'     },
+              { icon: 'fa-location-dot', title: 'Bureau',    main: 'Smart-Économie HQ',          sub: '123 Rue de la Solidarité, Ville' },
             ].map((c) => (
               <div key={c.title} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex items-start gap-4">
-                <div className={`w-12 h-12 rounded-xl ${c.bg} flex items-center justify-center shrink-0`}>
-                  <i className={`fa-solid ${c.icon} ${c.color} text-lg`}></i>
+                <div className="w-12 h-12 rounded-xl bg-[#0a2342] flex items-center justify-center shrink-0">
+                  <i className={`fa-solid ${c.icon} text-white text-sm`}></i>
                 </div>
                 <div>
                   <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-1">{c.title}</p>

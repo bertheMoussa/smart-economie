@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import heroCar from '../../assets/images/hero-car-1.png';
+import heroCar from '../../assets/images/hero-car-2.png';
 
 const formules = [
   {
@@ -51,13 +51,13 @@ const formules = [
   },
   {
     id: 'tous-risques',
-    color: 'purple',
-    accent: 'bg-purple-600',
-    border: 'border-purple-500',
-    iconBg: 'bg-purple-50',
-    iconColor: 'text-purple-500',
-    tagBg: 'bg-purple-50 text-purple-600',
-    btnClass: 'border-2 border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white',
+    color: 'navy',
+    accent: 'bg-[#1e40af]',
+    border: 'border-[#1e40af]',
+    iconBg: 'bg-blue-50',
+    iconColor: 'text-[#1e40af]',
+    tagBg: 'bg-blue-50 text-[#1e40af]',
+    btnClass: 'border-2 border-[#1e40af] text-[#1e40af] hover:bg-[#1e40af] hover:text-white',
     icon: 'fa-crown',
     tag: 'Premium',
     title: 'Tous Risques',
@@ -100,8 +100,8 @@ const faqs = [
     a: 'Oui, à tout moment et sans pénalité depuis votre espace personnel.',
   },
   {
-    q: 'Ce modèle est-il conforme à la Sharia ?',
-    a: 'Oui. Notre modèle Takaful est fondé sur la solidarité mutuelle : ni intérêt, ni spéculation, aucun profit sur les contributions.',
+    q: 'Ce modèle est-il éthique et responsable ?',
+    a: 'Oui. Notre modèle est fondé sur la solidarité mutuelle : ni intérêt, ni spéculation, aucun profit sur les contributions des membres.',
   },
   {
     q: 'Quand ma couverture démarre-t-elle ?',
@@ -132,7 +132,7 @@ export default function Subscription() {
             {/* Colonne gauche — texte */}
             <div>
               <span className="inline-block text-xs font-bold uppercase tracking-widest text-[#228B22] bg-[#228B22]/15 px-4 py-1.5 rounded-full mb-5">
-                Adhésion — Takaful
+                Adhésion solidaire
               </span>
               <h1 className="text-4xl font-extrabold text-white mb-4 leading-tight">
                 Choisissez votre<br />
@@ -256,7 +256,7 @@ export default function Subscription() {
                   <th className="px-6 py-5 text-center text-sm font-bold text-[#228B22] bg-green-50/60">
                     <i className="fa-solid fa-shield-halved mr-1"></i> Tiers Étendu
                   </th>
-                  <th className="px-6 py-5 text-center text-sm font-bold text-purple-500">
+                  <th className="px-6 py-5 text-center text-sm font-bold text-[#1e40af]">
                     <i className="fa-solid fa-crown mr-1"></i> Tous Risques
                   </th>
                 </tr>
@@ -279,7 +279,7 @@ export default function Subscription() {
                         ) : (
                           <span className={`text-xs font-bold px-3 py-1 rounded-full ${
                             val === 'Aucune' ? 'bg-green-100 text-[#228B22]' :
-                            val === 'VIP 24/7' ? 'bg-purple-50 text-purple-500' :
+                            val === 'VIP 24/7' ? 'bg-blue-50 text-[#1e40af]' :
                             val === 'Prioritaire' ? 'bg-green-50 text-[#228B22]' :
                             'bg-gray-100 text-gray-500'
                           }`}>{val}</span>
@@ -324,15 +324,15 @@ export default function Subscription() {
       </section>
 
       {/* ── CTA ──────────────────────────────────────────────────────── */}
-      <section className="py-20 bg-[#0a2342]">
+      <section className="py-20 bg-[#f8fafc] border-t border-gray-100">
         <div className="container mx-auto px-8 max-w-4xl text-center">
           <span className="inline-block text-xs font-bold uppercase tracking-widest text-[#228B22] mb-4">
             Rejoignez-nous
           </span>
-          <h2 className="text-4xl font-extrabold text-white mb-4">
+          <h2 className="text-4xl font-extrabold text-[#0a2342] mb-4">
             Prêt à adhérer ?
           </h2>
-          <p className="text-white/60 text-lg mb-10 max-w-xl mx-auto">
+          <p className="text-gray-500 text-lg mb-10 max-w-xl mx-auto">
             Aucune cotisation mensuelle. Couverture immédiate dès le premier jour d'adhésion.
           </p>
           <div className="flex items-center justify-center gap-4 flex-wrap">
@@ -345,7 +345,7 @@ export default function Subscription() {
             </Link>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 border-2 border-white/30 text-white px-10 py-4 rounded-full font-bold hover:border-white hover:bg-white/10 transition-all text-base"
+              className="inline-flex items-center gap-2 border-2 border-[#0a2342] text-[#0a2342] px-10 py-4 rounded-full font-bold hover:bg-[#0a2342] hover:text-white transition-all text-base"
             >
               <i className="fa-solid fa-headset"></i>
               Parler à un conseiller

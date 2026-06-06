@@ -53,7 +53,7 @@ export default function Claims() {
 
             {/* Carte urgence */}
             <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
-              <p className="text-xs font-bold uppercase tracking-widest text-[#228B22] mb-5">
+              <p className="text-xs font-bold uppercase tracking-widest text-white mb-5">
                 Urgence — Contactez-nous maintenant
               </p>
               <div className="space-y-4">
@@ -90,13 +90,13 @@ export default function Claims() {
       </section>
 
       {/* ── Alerte membres ───────────────────────────────────────────── */}
-      <section className="bg-amber-50 border-b border-amber-100">
+      <section className="bg-blue-50 border-b border-blue-100">
         <div className="container mx-auto px-8 max-w-6xl py-5">
           <div className="flex items-center gap-4">
-            <i className="fa-solid fa-circle-info text-amber-500 text-xl shrink-0"></i>
-            <p className="text-amber-800 text-sm">
+            <i className="fa-solid fa-circle-info text-blue-600 text-xl shrink-0"></i>
+            <p className="text-blue-800 text-sm">
               <strong>Réservé aux membres :</strong> La déclaration de sinistre est accessible uniquement depuis votre espace personnel.{' '}
-              <Link to="/login" className="underline font-bold hover:text-amber-900">
+              <Link to="/login" className="underline font-bold hover:text-blue-900">
                 Connectez-vous ici →
               </Link>
             </p>
@@ -115,67 +115,19 @@ export default function Claims() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              {
-                icon: 'fa-car-burst',
-                color: 'bg-red-50',
-                iconColor: 'text-red-500',
-                border: 'border-red-100',
-                title: 'Accident de circulation',
-                desc: 'Collision, accrochage, carambolage. Couvert par toutes les formules (Tiers Simple, Étendu, Tous Risques).',
-                formules: ['Tiers Simple', 'Tiers Étendu', 'Tous Risques'],
-              },
-              {
-                icon: 'fa-fire',
-                color: 'bg-orange-50',
-                iconColor: 'text-orange-500',
-                border: 'border-orange-100',
-                title: 'Incendie & Explosion',
-                desc: 'Dommages causés par un incendie ou une explosion sur votre véhicule.',
-                formules: ['Tiers Étendu', 'Tous Risques'],
-              },
-              {
-                icon: 'fa-mask',
-                color: 'bg-purple-50',
-                iconColor: 'text-purple-500',
-                border: 'border-purple-100',
-                title: 'Vol du véhicule',
-                desc: 'Vol total ou tentative de vol avec effraction dûment constatée.',
-                formules: ['Tiers Étendu', 'Tous Risques'],
-              },
-              {
-                icon: 'fa-window-restore',
-                color: 'bg-blue-50',
-                iconColor: 'text-blue-500',
-                border: 'border-blue-100',
-                title: 'Bris de glace',
-                desc: 'Fissure ou bris du pare-brise, vitres latérales et lunette arrière.',
-                formules: ['Tiers Étendu', 'Tous Risques'],
-              },
-              {
-                icon: 'fa-cloud-bolt',
-                color: 'bg-sky-50',
-                iconColor: 'text-sky-500',
-                border: 'border-sky-100',
-                title: 'Catastrophe naturelle',
-                desc: 'Inondation, grêle, tempête affectant directement votre véhicule.',
-                formules: ['Tous Risques'],
-              },
-              {
-                icon: 'fa-person-falling',
-                color: 'bg-green-50',
-                iconColor: 'text-[#228B22]',
-                border: 'border-green-100',
-                title: 'Dommages corporels',
-                desc: 'Blessures physiques consécutives à un accident de la route.',
-                formules: ['Tiers Simple', 'Tiers Étendu', 'Tous Risques'],
-              },
+              { icon: 'fa-car-burst',      title: 'Accident de circulation', desc: 'Collision, accrochage, carambolage. Couvert par toutes les formules (Tiers Simple, Étendu, Tous Risques).',         formules: ['Tiers Simple', 'Tiers Étendu', 'Tous Risques'] },
+              { icon: 'fa-fire',           title: 'Incendie & Explosion',    desc: 'Dommages causés par un incendie ou une explosion sur votre véhicule.',                                               formules: ['Tiers Étendu', 'Tous Risques'] },
+              { icon: 'fa-mask',           title: 'Vol du véhicule',         desc: 'Vol total ou tentative de vol avec effraction dûment constatée.',                                                    formules: ['Tiers Étendu', 'Tous Risques'] },
+              { icon: 'fa-window-restore', title: 'Bris de glace',           desc: 'Fissure ou bris du pare-brise, vitres latérales et lunette arrière.',                                               formules: ['Tiers Étendu', 'Tous Risques'] },
+              { icon: 'fa-cloud-bolt',     title: 'Catastrophe naturelle',   desc: 'Inondation, grêle, tempête affectant directement votre véhicule.',                                                  formules: ['Tous Risques'] },
+              { icon: 'fa-person-falling', title: 'Dommages corporels',      desc: 'Blessures physiques consécutives à un accident de la route.',                                                       formules: ['Tiers Simple', 'Tiers Étendu', 'Tous Risques'] },
             ].map((item) => (
               <div
                 key={item.title}
-                className={`bg-white border ${item.border} rounded-2xl p-7 shadow-sm hover:shadow-md transition-shadow`}
+                className="bg-white border border-gray-100 rounded-2xl p-7 shadow-sm hover:shadow-md transition-shadow"
               >
-                <div className={`w-12 h-12 rounded-xl ${item.color} flex items-center justify-center mb-5`}>
-                  <i className={`fa-solid ${item.icon} ${item.iconColor} text-xl`}></i>
+                <div className="w-12 h-12 rounded-xl bg-[#0a2342] flex items-center justify-center mb-5">
+                  <i className={`fa-solid ${item.icon} text-white text-xl`}></i>
                 </div>
                 <h3 className="text-base font-bold text-[#0a2342] mb-2">{item.title}</h3>
                 <p className="text-gray-400 text-sm leading-relaxed mb-4">{item.desc}</p>
@@ -285,12 +237,12 @@ export default function Claims() {
       </section>
 
       {/* ── CTA ──────────────────────────────────────────────────────── */}
-      <section className="py-16 bg-[#0a2342]">
+      <section className="py-16 bg-[#f8fafc] border-t border-gray-100">
         <div className="container mx-auto px-8 max-w-4xl text-center">
-          <h2 className="text-3xl font-extrabold text-white mb-4">
+          <h2 className="text-3xl font-extrabold text-[#0a2342] mb-4">
             Besoin d'aide pour votre déclaration ?
           </h2>
-          <p className="text-white/60 mb-8 text-lg">
+          <p className="text-gray-500 mb-8 text-lg">
             Notre équipe est disponible 24h/24 pour vous accompagner dans votre démarche.
           </p>
           <div className="flex items-center justify-center gap-4 flex-wrap">
@@ -303,7 +255,7 @@ export default function Claims() {
             </Link>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 border-2 border-white/30 text-white px-8 py-4 rounded-full font-bold hover:border-white hover:bg-white/10 transition-all"
+              className="inline-flex items-center gap-2 border-2 border-[#0a2342] text-[#0a2342] px-8 py-4 rounded-full font-bold hover:bg-[#0a2342] hover:text-white transition-all"
             >
               <i className="fa-solid fa-headset"></i>
               Contacter le support

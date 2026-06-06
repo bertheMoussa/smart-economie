@@ -41,19 +41,22 @@ export function Header() {
       >
         <div className="container mx-auto px-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Shield className="size-8 text-blue-600" />
+            <Shield className="size-8 text-[#C9A227]" />
             <span className="text-2xl font-semibold text-gray-900">
-              Smart-<span className="text-blue-600">Economie</span>
+              Smart-<span className="text-[#C9A227]">Economie</span>
             </span>
           </div>
           <div className="hidden md:flex items-center gap-4">
-            <Button 
+            <Button
               variant="ghost"
               onClick={() => setIsDevisOpen(true)}
             >
               Devis gratuit
             </Button>
-            <Button onClick={() => window.location.href = '/login'}>
+            <Button
+              className="bg-[#0a2342] hover:bg-[#1a3a6b] text-white"
+              onClick={() => window.location.href = '/login'}
+            >
               Connexion
             </Button>
           </div>
@@ -65,9 +68,9 @@ export function Header() {
         <div className="flex items-center justify-between">
           {/* Logo compact visible seulement quand scrolled */}
           <div className={`flex items-center gap-2 transition-all duration-300 ${scrolled ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-            <Shield className="size-5 text-blue-600" />
+            <Shield className="size-5 text-[#C9A227]" />
             <span className="text-base font-semibold text-gray-900">
-              Smart-<span className="text-blue-600">Economie</span>
+              Smart-<span className="text-[#C9A227]">Economie</span>
             </span>
           </div>
 
@@ -107,7 +110,11 @@ export function Header() {
 
           {/* Bouton connexion compact visible seulement quand scrolled */}
           <div className={`hidden md:flex items-center gap-4 transition-all duration-300 ${scrolled ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-            <Button size="sm" onClick={() => window.location.href = '/login'}>
+            <Button
+              size="sm"
+              className="bg-[#0a2342] hover:bg-[#1a3a6b] text-white"
+              onClick={() => window.location.href = '/login'}
+            >
               Mon espace
             </Button>
           </div>
@@ -174,7 +181,8 @@ export function Header() {
               >
                 Devis gratuit
               </Button>
-              <Button 
+              <Button
+                className="bg-[#0a2342] hover:bg-[#1a3a6b] text-white"
                 onClick={() => {
                   window.location.href = '/login';
                   setMobileMenuOpen(false);
