@@ -30,7 +30,7 @@ export default function HomeEntreprise() {
           style={{ background: 'linear-gradient(to right, transparent 0%, #bfdbfe 15%, rgba(240,253,244,0.9) 40%, transparent 65%)' }}
         />
         <div className="relative z-10 container mx-auto px-6 max-w-full flex items-stretch min-h-[350px]">
-          <div className="w-1/2 py-10 flex flex-col justify-center mx-auto">
+          <div className="w-full md:w-1/2 py-10 flex flex-col justify-center mx-auto px-4 md:px-0">
             <h1 className="text-5xl font-bold text-[#0a2342] mb-4 leading-tight tracking-tight">
               Assurance Pro
               <br />
@@ -63,7 +63,7 @@ export default function HomeEntreprise() {
       {/* ── Barre valeurs — icônes côte à côte → couleur uniforme ───── */}
       <section className="bg-white py-6 shadow-sm border-b border-gray-100">
         <div className="container mx-auto px-6 max-w-6xl">
-          <div className="grid grid-cols-3 gap-6 divide-x divide-gray-100">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 md:divide-x divide-gray-100">
             <div className="flex items-start gap-4 p-4">
               <div className="text-[#0a2342] text-2xl mt-1">
                 <i className="fa-solid fa-building"></i>
@@ -131,7 +131,7 @@ export default function HomeEntreprise() {
             <p className="text-gray-400 mt-3 text-lg">Adaptées à chaque type d'activité professionnelle</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">
             {[
               {
                 img: card1FlotteAuto,
@@ -217,7 +217,7 @@ export default function HomeEntreprise() {
             <h2 className="text-4xl font-extrabold text-[#0a2342] mt-2">Des avantages pensés pour les pros</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
             {[
               { icon: 'fa-file-contract',    title: 'Contrat sur mesure',       desc: 'Chaque couverture est adaptée à votre secteur et à la taille de votre flotte.' },
               { icon: 'fa-headset',          title: 'Gestionnaire dédié',       desc: 'Un interlocuteur unique pour toutes vos demandes et déclarations de sinistres.' },

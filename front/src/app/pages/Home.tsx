@@ -27,7 +27,7 @@ export default function Home() {
           style={{ background: 'linear-gradient(to right, transparent 0%, #bfdbfe 15%, rgba(240,253,244,0.9) 40%, transparent 65%)' }}
         />
         <div className="relative z-10 container mx-auto px-6 max-w-full flex items-stretch min-h-[350px]">
-          <div className="w-1/2 py-10 flex flex-col justify-center mx-auto">
+          <div className="w-full md:w-1/2 py-10 flex flex-col justify-center mx-auto px-4 md:px-0">
             <h1 className="text-5xl font-bold text-[#0a2342] mb-4 leading-tight tracking-tight">
               Une Assurance
               <br />
@@ -59,7 +59,7 @@ export default function Home() {
       {/* ── Barre valeurs — icônes nues côte à côte → même couleur ──── */}
       <section className="bg-white py-6 shadow-sm border-b border-gray-100">
         <div className="container mx-auto px-6 max-w-6xl">
-          <div className="grid grid-cols-3 gap-6 divide-x divide-gray-100">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 md:divide-x divide-gray-100">
             <div className="flex items-start gap-4 p-4">
               <div className="text-[#0a2342] text-2xl mt-1">
                 <i className="fa-solid fa-handshake-angle"></i>
@@ -94,7 +94,7 @@ export default function Home() {
       {/* ── Le modèle solidaire ──────────────────────────────────────── */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-8 max-w-6xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
             <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-100">
               <img
                 src={heroCar}
@@ -146,7 +146,7 @@ export default function Home() {
             <p className="text-gray-400 mt-3 text-lg">Sans cotisation mensuelle — contribution uniquement en cas de sinistre</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
             {/* Tiers Simple — fond bleu → icône blanche */}
             <div className="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
               <div className="h-1.5 bg-blue-500"></div>
@@ -307,7 +307,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
             {[
               { icon: 'fa-ban',            title: 'Zéro cotisation mensuelle',  desc: "Aucun prélèvement fixe chaque mois. Vous contribuez uniquement lorsqu'un sinistre est déclaré par un membre de la communauté." },
               { icon: 'fa-mosque',         title: '100 % Finance éthique',     desc: "Aucun intérêt, aucune spéculation. Chaque opération repose sur des principes éthiques et responsables." },

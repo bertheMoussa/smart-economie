@@ -1,18 +1,49 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+
+// Seuils avec hystérésis : on passe en compact au-delà de ENTER, et on ne
+// revient en complet qu'en dessous de EXIT. L'écart (60px) est plus grand que
+// la hauteur de la ligne repliée, donc le décalage de scroll provoqué par le
+// changement de hauteur ne peut jamais refranchir le seuil → aucun clignotement.
+const COMPACT_ENTER = 120;
+const COMPACT_EXIT = 60;
 
 export default function Header() {
   const location = useLocation();
   const navigate = useNavigate();
   const { isAuthenticated, user, logout } = useAuth();
-  const [scrolled, setScrolled] = useState(false);
+  const [isCompact, setIsCompact] = useState(false);
   const [showEmergencyMenu, setShowEmergencyMenu] = useState(false);
+  // Miroir de l'état lu dans le handler pour éviter les closures périmées et
+  // ne re-render que lorsqu'un vrai seuil est franchi.
+  const isCompactRef = useRef(false);
+  const tickingRef = useRef(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 60);
+    const evaluate = () => {
+      const y = window.scrollY;
+      const current = isCompactRef.current;
+      let next = current;
+
+      if (!current && y > COMPACT_ENTER) next = true;
+      else if (current && y < COMPACT_EXIT) next = false;
+
+      if (next !== current) {
+        isCompactRef.current = next;
+        setIsCompact(next);
+      }
+      tickingRef.current = false;
     };
+
+    const handleScroll = () => {
+      if (tickingRef.current) return;
+      tickingRef.current = true;
+      window.requestAnimationFrame(evaluate);
+    };
+
+    // État initial (cas d'un rechargement déjà scrollé).
+    evaluate();
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -54,7 +85,7 @@ export default function Header() {
         {/* Top Header: Logo & Actions — se cache au scroll */}
         <div
           className={`transition-all duration-300 ${
-            scrolled ? 'max-h-0 opacity-0 py-0 mb-0 overflow-hidden' : 'max-h-32 opacity-100 py-2 mb-6'
+            isCompact ? 'max-h-0 opacity-0 py-0 mb-0 overflow-hidden' : 'max-h-32 opacity-100 py-2 mb-6'
           } ${showEmergencyMenu ? 'overflow-visible' : 'overflow-hidden'}`}
         >
           <div className="flex justify-between items-center">

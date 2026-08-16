@@ -55,7 +55,7 @@ export default function History() {
 
       {/* ── Hero ─────────────────────────────────────────────────────── */}
       <section className="bg-[#0a2342] py-14">
-        <div className="container mx-auto px-8 max-w-6xl">
+        <div className="container mx-auto px-4 md:px-8 max-w-6xl">
           <span className="inline-block text-xs font-bold uppercase tracking-widest text-[#228B22] bg-[#228B22]/15 px-4 py-1.5 rounded-full mb-5">
             Notre parcours
           </span>
@@ -70,7 +70,7 @@ export default function History() {
 
       {/* ── Chiffres clés ────────────────────────────────────────────── */}
       <section className="bg-[#f8fafc] border-b border-gray-100 py-10">
-        <div className="container mx-auto px-8 max-w-6xl">
+        <div className="container mx-auto px-4 md:px-8 max-w-6xl">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
               { icon: 'fa-calendar',      val: '2020',   label: 'Année de création', color: 'text-[#0a2342]' },
@@ -120,7 +120,7 @@ export default function History() {
 
       {/* ── Vision & Engagement ──────────────────────────────────────── */}
       <section className="py-16 bg-[#f8fafc]">
-        <div className="container mx-auto px-8 max-w-6xl">
+        <div className="container mx-auto px-4 md:px-8 max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
             <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8">
@@ -166,13 +166,13 @@ export default function History() {
 
       {/* ── Équipe ───────────────────────────────────────────────────── */}
       <section className="py-16 bg-white">
-        <div className="container mx-auto px-8 max-w-6xl">
+        <div className="container mx-auto px-4 md:px-8 max-w-6xl">
           <div className="text-center mb-12">
             <span className="text-xs font-bold uppercase tracking-widest text-[#228B22]">Les fondateurs</span>
             <h2 className="text-3xl font-extrabold text-[#0a2342] mt-2">Notre équipe</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
             {team.map((member) => (
               <div key={member.name} className="bg-white border border-gray-100 rounded-2xl shadow-sm p-8 text-center hover:shadow-md transition-shadow">
                 <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${member.from} ${member.to} mx-auto mb-5 flex items-center justify-center text-white text-xl font-bold shadow-md`}>

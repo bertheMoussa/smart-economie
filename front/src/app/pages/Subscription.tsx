@@ -156,14 +156,14 @@ export default function Subscription() {
 
       {/* ── Formules ─────────────────────────────────────────────────── */}
       <section className="py-20 bg-white">
-        <div className="container mx-auto px-8 max-w-6xl">
+        <div className="container mx-auto px-4 md:px-8 max-w-6xl">
           <div className="text-center mb-14">
             <span className="text-xs font-bold uppercase tracking-widest text-[#228B22]">Couvertures</span>
             <h2 className="text-4xl font-extrabold text-[#0a2342] mt-2">Nos formules d'assurance auto</h2>
             <p className="text-gray-400 mt-3">Contribution solidaire uniquement en cas de sinistre</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
             {formules.map((f) => {
               const isSelected = selected === f.id;
               return (
@@ -239,7 +239,7 @@ export default function Subscription() {
 
       {/* ── Tableau comparatif ───────────────────────────────────────── */}
       <section className="py-20 bg-[#f8fafc]">
-        <div className="container mx-auto px-8 max-w-6xl">
+        <div className="container mx-auto px-4 md:px-8 max-w-6xl">
           <div className="text-center mb-14">
             <span className="text-xs font-bold uppercase tracking-widest text-[#228B22]">Détail</span>
             <h2 className="text-4xl font-extrabold text-[#0a2342] mt-2">Comparaison des formules</h2>

@@ -22,7 +22,7 @@ export default function About() {
 
       {/* ── Chiffres clés ────────────────────────────────────────────── */}
       <section className="bg-white border-b border-gray-100">
-        <div className="container mx-auto px-8 max-w-6xl">
+        <div className="container mx-auto px-4 md:px-8 max-w-6xl">
           <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-gray-100">
             {[
               { value: '0 DH',   label: 'Cotisation mensuelle', icon: 'fa-ban',    color: 'text-[#0a2342]' },
@@ -42,8 +42,8 @@ export default function About() {
 
       {/* ── Mission ──────────────────────────────────────────────────── */}
       <section className="py-20 bg-white">
-        <div className="container mx-auto px-8 max-w-6xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <div className="container mx-auto px-4 md:px-8 max-w-6xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
             <div>
               <span className="text-xs font-bold uppercase tracking-widest text-[#228B22]">Notre mission</span>
               <h2 className="text-4xl font-extrabold text-[#0a2342] mt-2 mb-6">
@@ -83,13 +83,13 @@ export default function About() {
 
       {/* ── Nos Valeurs ──────────────────────────────────────────────── */}
       <section className="py-20 bg-[#f8fafc]">
-        <div className="container mx-auto px-8 max-w-6xl">
+        <div className="container mx-auto px-4 md:px-8 max-w-6xl">
           <div className="text-center mb-14">
             <span className="text-xs font-bold uppercase tracking-widest text-[#228B22]">Ce qui nous définit</span>
             <h2 className="text-4xl font-extrabold text-[#0a2342] mt-2">Nos Valeurs</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
             {[
               {
                 icon: 'fa-ban',
@@ -131,14 +131,14 @@ export default function About() {
 
       {/* ── Comment Ça Fonctionne ────────────────────────────────────── */}
       <section className="py-20 bg-white">
-        <div className="container mx-auto px-8 max-w-6xl">
+        <div className="container mx-auto px-4 md:px-8 max-w-6xl">
           <div className="text-center mb-14">
             <span className="text-xs font-bold uppercase tracking-widest text-[#228B22]">Le principe</span>
             <h2 className="text-4xl font-extrabold text-[#0a2342] mt-2">Comment Ça Fonctionne</h2>
             <p className="text-gray-400 mt-3 text-lg">Trois étapes simples pour rejoindre notre communauté</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-8">
             {[
               {
                 step: '01',

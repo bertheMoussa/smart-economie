@@ -39,7 +39,7 @@ export function Header() {
           scrolled ? 'max-h-0 opacity-0 py-0' : 'max-h-20 opacity-100 py-2'
         }`}
       >
-        <div className="container mx-auto px-4 flex items-center justify-between">
+        <div className="container mx-auto px-4 flex items-center justify-between flex-wrap gap-2">
           <div className="flex items-center gap-2">
             <Shield className="size-8 text-[#C9A227]" />
             <span className="text-2xl font-semibold text-gray-900">

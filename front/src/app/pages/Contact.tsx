@@ -27,7 +27,7 @@ export default function Contact() {
 
       {/* ── Hero ─────────────────────────────────────────────────────── */}
       <section className="bg-[#0a2342] py-14">
-        <div className="container mx-auto px-8 max-w-6xl">
+        <div className="container mx-auto px-4 md:px-8 max-w-6xl">
           <span className="inline-block text-xs font-bold uppercase tracking-widest text-[#228B22] bg-[#228B22]/15 px-4 py-1.5 rounded-full mb-5">
             Support
           </span>
@@ -43,8 +43,8 @@ export default function Contact() {
 
       {/* ── 3 cartes de contact ──────────────────────────────────────── */}
       <section className="bg-[#f8fafc] py-10 border-b border-gray-100">
-        <div className="container mx-auto px-8 max-w-6xl">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="container mx-auto px-4 md:px-8 max-w-6xl">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
             {[
               { icon: 'fa-phone',        title: 'Téléphone', main: '+22 535 257 390',            sub: 'Lun – Sam : 9h à 19h' },
               { icon: 'fa-envelope',     title: 'Email',     main: 'contact@smart-economie.com', sub: 'Réponse sous 24h'     },
@@ -67,7 +67,7 @@ export default function Contact() {
 
       {/* ── Formulaire + FAQ ─────────────────────────────────────────── */}
       <section className="py-16">
-        <div className="container mx-auto px-8 max-w-6xl">
+        <div className="container mx-auto px-4 md:px-8 max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
 
             {/* Formulaire */}

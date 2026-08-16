@@ -127,7 +127,7 @@ export default function Login() {
 
       {/* ── Panneau droit — Formulaire ───────────────────────────────── */}
       <div className="w-full lg:w-3/5 flex items-center justify-center bg-white overflow-y-auto py-10">
-        <div className="w-full px-12">
+        <div className="w-full px-4 md:px-12">
 
           {/* Logo mobile */}
           <Link to="/" className="flex lg:hidden items-center gap-2 mb-8 justify-center">
